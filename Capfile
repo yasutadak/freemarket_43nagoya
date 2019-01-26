@@ -1,6 +1,9 @@
 require "capistrano/setup"
 require "capistrano/deploy"
 
+require 'capistrano/git_copy'
+install_plugin Capistrano::GitCopy::SCM
+
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
