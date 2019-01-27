@@ -24,6 +24,9 @@
 
 
 server '54.64.4.22', user: 'ec2-user', roles: %w{app db web}
+
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
