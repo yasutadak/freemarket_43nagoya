@@ -39,6 +39,8 @@
 |price|integer|null: false|
 |seller|references|null: false, foreign_key: { to_table: :users }|
 |buyer|references|null: false, foreign_key: { to_table: :users }|
+|category|references|null: false, foreign_key: true|
+|brand|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :seller, class_name: 'User'
@@ -46,6 +48,8 @@
 - has_many :images
 - has_many :likes, dependent: :destroy
 - has_many :comments
+- belongs_to :category
+- belongs_to :brand
 
 ## Image
 |Column|Type|Options|
@@ -95,3 +99,19 @@
 
 ### Asociation
 - belongs_to :user
+
+## Category
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false, unique: true|
+
+### Asociation
+- has_many :products
+
+## Brand
+|Column|Type|Options|
+|------|----|-------|
+|brand|string|null: false, unique: true|
+
+### Asociation
+- has_many :products
