@@ -23,6 +23,7 @@
 - has_many :sold_product, -> { where('buyer_id is not NULL') }, foreign_key: 'buyer_id', class_name: 'Product'
 - has_many :buyed_product, foreign_key: 'buyer_id', class_name: 'Product'
 - has_many :likes, dependent: :destroy
+- has_many :comments
 
 ## Product
 |Column|Type|Options|
@@ -42,6 +43,7 @@
 - belongs_to :buyer, class_name: 'User'
 - has_many :images
 - has_many :likes, dependent: :destroy
+- has_many :comments
 
 ## Image
 |Column|Type|Options|
@@ -55,6 +57,17 @@
 ## Like
 |Column|Type|Options|
 |------|----|-------|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :user
+- belongs_to :product
+
+## Comment
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
 |user|references|null: false, foreign_key: true|
 |product|references|null: false, foreign_key: true|
 
