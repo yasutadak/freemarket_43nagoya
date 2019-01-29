@@ -39,3 +39,13 @@
 ### Association
 - belongs_to :seller, class_name: 'User'
 - belongs_to :buyer, class_name: 'User'
+- has_many :images
+
+## Image
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|product|references|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :product
