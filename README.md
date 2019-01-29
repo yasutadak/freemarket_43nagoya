@@ -25,6 +25,7 @@
 - has_many :likes, dependent: :destroy
 - has_many :comments
 - has_many :evaluates
+- has_many :points
 
 ## Product
 |Column|Type|Options|
@@ -80,6 +81,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |result|integer|null: false|
+|user|references|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :user
+
+## Point
+|Column|Type|Options|
+|------|----|-------|
+|point|integer|null: false|
+|expiration_date|date| |
 |user|references|null: false, foreign_key: true|
 
 ### Asociation
