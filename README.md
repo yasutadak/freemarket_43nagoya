@@ -24,6 +24,7 @@
 - has_many :buyed_product, foreign_key: 'buyer_id', class_name: 'Product'
 - has_many :likes, dependent: :destroy
 - has_many :comments
+- has_many :evaluates
 
 ## Product
 |Column|Type|Options|
@@ -74,3 +75,12 @@
 ### Asociation
 - belongs_to :user
 - belongs_to :product
+
+## Evaluate
+|Column|Type|Options|
+|------|----|-------|
+|result|integer|null: false|
+|user|references|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :user
