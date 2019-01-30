@@ -75,6 +75,9 @@ a {
     line-height: 26px;
     font-size: 14px;
   }
+  a.category:hover {
+    color: #0099e8;
+  }
   a.brand {
     position: relative;
     margin: 2px;
@@ -83,7 +86,16 @@ a {
     line-height: 32px;
     font-size: 14px;
   }
+  a.brand:hover {
+    color: #0099e8;
+  }
 
+  ul.category {
+    display: none;
+  }
+  ul.brand {
+    display: none;
+  }
   nav.right-box {
     float: right;
     a.main-header__btn {
@@ -113,3 +125,4 @@ a {
     }
   }
 }
+
