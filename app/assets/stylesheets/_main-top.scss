@@ -1,0 +1,48 @@
+.main-top {
+  height: 390px;
+  position: relative;
+  bottom: 48px;
+  margin-bottom: -48px;
+  background-color: #F3FFD8;
+
+  &__content {
+    height: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    &__box {
+      width: 480px;
+      padding: 50px 0;
+      h2 {
+        font-size: 60px;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+      p.top-text {
+        font-size: 18px;
+        line-height: 2;
+        padding: 20px 0 0;
+      }
+      .main-top__store {
+        margin: 24px 0 0;
+        a.left-link {
+
+        }
+        a.right-link {
+          margin: 0 0 0 8px;
+        }
+      }
+      img.main-top__image {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        top: 0;
+        left: 700px;
+      }
+    }
+  }
+}
+
+.main-content {
+  height: 800px;
+  background-color: #f5f5f5;
+}
