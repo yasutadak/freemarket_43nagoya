@@ -3,6 +3,19 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
+      t.string :family_name,     null: false
+      t.string :first_name,      null: false
+      t.string :family_katakana, null: false
+      t.string :first_katakana,  null: false
+      t.string :postal_code
+      t.string :domicile_pref,   null: false
+      t.string :domicile_city,   null: false
+      t.string :domicile_add,    null: false
+      t.string :building
+      t.date   :birthday,        null: false
+      t.string :phone_number,    null: false
+      t.text   :profile
+      t.string :nickname,        null: false
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
