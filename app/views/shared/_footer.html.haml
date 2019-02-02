@@ -135,7 +135,8 @@
   %p.footer__copyright
     © 2019 Mercari
 
-  %a.sell-btn{href: ""}
-    .sell-btn__title
-      出品
-    %i.fa.fa-camera
+  = link_to new_product_path do
+    .sell-btn
+      .sell-btn__title
+        出品
+      = fa_icon("camera",class: "fa-camera")
