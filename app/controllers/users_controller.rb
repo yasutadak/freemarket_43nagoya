@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-layout "header-top"
-def show
-end
-
+  def show
+  end
 end
