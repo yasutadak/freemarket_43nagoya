@@ -1,0 +1,142 @@
+.banner
+  .banner__box
+    .banner__box__inner
+      %h2
+        スマホでかんたんフリマアプリ
+      %p
+        今すぐ無料ダウンロード！
+      .banner-icon
+        %figure
+          %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?1966943736"}
+        .store-link
+          %a{href: ""}
+            %img.apple-link{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2777205881"}
+          %a{href: ""}
+            %img.google-link{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2777205881"}
+        %img.banner__image{src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?1966943736"}
+
+.footer
+  .footer__box
+    %ul
+      %li.footer-cell
+        %h3
+          メルカリについて
+        %ul.footer-list
+          %li.list
+            %a.link{href: ""}
+              会社概要（運営会社）
+          %li.list
+            %a.link{href: ""}
+              プライバシーポリシー
+          %li.list
+            %a.link{href: ""}
+              メルカリ利用規約
+          %li.list
+            %a.link{href: ""}
+              メルカリ利用規約・有償ポイントに関する特約
+          %li.list
+            %a.link{href: ""}
+              あんしんスマホサポート制度に関する利用特約
+          %li.list
+            %a.link{href: ""}
+              コンプライアンスポリシー
+          %li.list
+            %a.link{href: ""}
+              個人データの安全管理に係る基本方針
+          %li.list
+            %a.link{href: ""}
+              特定商取引に関する表記
+          %li.list
+            %a.link{href: ""}
+              資金決済法に基づく表示
+          %li.list
+            %a.link{href: ""}
+              法令順守と犯罪抑止のために
+          %li.list
+            %a.link{href: ""}
+              採用情報
+    %ul
+      %li.footer-cell
+        %h3
+          メルカリを見る
+        %ul.footer-list
+          %li.list
+            %a.link{href: ""}
+              カテゴリー一覧
+          %li.list
+            %a.link{href: ""}
+              ブランド一覧
+          %li.list
+            %a.link{href: ""}
+              出品地域一覧
+          %li.list
+            %a.link{href: ""}
+              公式ブログ
+          %li.list
+            %a.link{href: ""}
+              公式Twitter
+          %li.list
+            %a.link{href: ""}
+              公式Facebook
+    %ul
+      %li.footer-cell
+        %h3
+          ヘルプ＆ガイド
+        %ul.footer-list
+          %li.list
+            %a.link{href: ""}
+              メルカリガイド
+          %li.list
+            %a.link{href: ""}
+              メルカリロゴ利用ガイドライン
+          %li.list
+            %a.link{href: ""}
+              お知らせ
+          %li.list
+            %a.link{href: ""}
+              らくらくメルカリ便とは
+          %li.list
+            %a.link{href: ""}
+              ゆうゆうメルカリ便とは
+          %li.list
+            %a.link{href: ""}
+              大型らくらくメルカリ便とは
+          %li.list
+            %a.link{href: ""}
+              車体取引ガイド
+          %li.list
+            %a.link{href: ""}
+              返品・返金ポリシー
+          %li.list
+            %a.link{href: ""}
+              メルカリあんしん・あんぜん宣言！
+          %li.list
+            %a.link{href: ""}
+              偽ブランド品撲滅への取り組み
+          %li.list
+            %a.link{href: ""}
+              メルカリボックス
+    %ul
+      %li.footer-cell
+        %h3
+          国
+        %ul.footer-list
+          %li.list
+            %img.country{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?1966943736"}
+            United States
+          %li.list
+            %img.country{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?1966943736"}
+            United Kingdom
+          %li.list
+            %img.country{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?1966943736"}
+            日本
+  %a.footer__logo{href: ""}
+    %img.footer__logo__img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1966943736"}
+  %p.footer__copyright
+    © 2019 Mercari
+
+  = link_to new_product_path do
+    .sell-btn
+      .sell-btn__title
+        出品
+      = fa_icon("camera",class: "fa-camera")
