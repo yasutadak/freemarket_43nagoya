@@ -112,7 +112,7 @@ p.footer__copyright {
   font-size: 12px;
 }
 
-.sell-btn {
+a.sell-btn {
   position: fixed;
   bottom: 0;
   bottom: 32px;
@@ -126,11 +126,5 @@ p.footer__copyright {
   text-align: center;
   .sell-btn__title {
     margin: 30px 0 0 0;
-  }
-  .fa-camera {
-    font-weight: 400;
-    font-size: 54px;
-    margin: 8px 0 0;
-    font-family: 'Fontawesome';
   }
 }

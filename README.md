@@ -19,9 +19,9 @@
 |icon|string| |
 
 ### Association
-- has_many :selling_product, -> { where('buyer_id is NULL') }, foreign_key: 'seller_id', class_name: 'Product'
-- has_many :sold_product, -> { where('buyer_id is not NULL') }, foreign_key: 'buyer_id', class_name: 'Product'
-- has_many :bought_product, foreign_key: 'buyer_id', class_name: 'Product'
+- has_many :selling_products, -> { where('buyer_id is NULL') }, foreign_key: 'seller_id', class_name: 'Product'
+- has_many :sold_products, -> { where('buyer_id is not NULL') }, foreign_key: 'buyer_id', class_name: 'Product'
+- has_many :bought_products, foreign_key: 'buyer_id', class_name: 'Product'
 - has_many :likes, dependent: :destroy
 - has_many :comments
 - has_many :evaluates
