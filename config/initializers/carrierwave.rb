@@ -15,8 +15,8 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'image-uploader-43'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/image-uploader-43'
-end
+    config.fog_directory  = 'image-uploader-43'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/image-uploader-43'
+  end
 end
 
