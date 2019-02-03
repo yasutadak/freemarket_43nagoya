@@ -3,7 +3,7 @@
   %main.main
     %section.main__section
       %h2 商品の情報を入力
-      %form
+      = form_for @product do |f|
         .main__section__inner
           %h3.main__section__inner__group__category
             出品画像
@@ -14,12 +14,12 @@
             %h3.main__section__inner__group__category
               商品名
               %span.main__section__inner__group__category__attention 必須
-            %input.main__section__inner__group__textfield{placeholder: "商品名（必須 40文字まで)"}
+            = f.text_field :name, class: "main__section__inner__group__textfield", placeholder: "商品名（必須 40文字まで)"
           .main__section__inner__group
             %h3.main__section__inner__group__category
               商品の説明
               %span.main__section__inner__group__category__attention 必須
-            %textarea.main__section__inner__group__textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+            = f.text_area :description, class: "main__section__inner__group__textarea", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
         .main__section__inner.clearfix
           %h3.main__section__inner__subCategory
             商品詳細
@@ -28,52 +28,12 @@
               %h3.main__section__inner__form__group__subCategory
                 カテゴリー
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              %select.main__section__inner__form__group__select
-                %option{value: ""} ---
-                %option{value: "1"}
-                  レディース
-                %option{value: "2"}
-                  メンズ
-                %option{value: "3"}
-                  ベビー・キッズ
-                %option{value: "4"}
-                  インテリア・住まい・小物
-                %option{value: "5"}
-                  本・音楽・ゲーム
-                %option{value: "6"}
-                  おもちゃ・ホビー・グッズ
-                %option{value: "7"}
-                  コスメ・香水・美容
-                %option{value: "8"}
-                  家電・スマホ・カメラ
-                %option{value: "9"}
-                  スポーツ・レジャー
-                %option{value: "10"}
-                  ハンドメイド
-                %option{value: "11"}
-                  チケット
-                %option{value: "12"}
-                  自動車・オートバイ
-                %option{value: "13"}
-                  その他
+              = f.select :status, [["レディース", "レディース"], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"], ["本・音楽・ゲーム", "本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容", "コスメ・香水・美容"], ["家電・スマホ・カメラ", "家電・スマホ・カメラ"], ["スポーツ・レジャー", "スポーツ・レジャー"], ["ハンドメイド", "ハンドメイド"], ["チケット", "チケット"], ["自動車・オートバイ", "自動車・オートバイ"], ["その他", "その他"]], {include_blank: "---"}
             .main__section__inner__form__group
               %h3.main__section__inner__form__group__subCategory
                 商品の状態
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              %select.main__section__inner__form__group__select
-                %option{value: ""} ---
-                %option{value: "1"}
-                  新品・未使用
-                %option{value: "2"}
-                  未使用に近い
-                %option{value: "3"}
-                  目立った傷や汚れなし
-                %option{value: "4"}
-                  やや傷や汚れあり
-                %option{value: "5"}
-                  傷や汚れあり
-                %option{value: "6"}
-                  全体的に状態が悪い
+              = f.select :status, [["新品・未使用", "新品・未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], {include_blank: "---"}
         .main__section__inner.clearfix
           %h3.main__section__inner__subCategory
             配送料について
@@ -82,12 +42,7 @@
               %h3.main__section__inner__form__group__subCategory
                 配送料の負担
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              %select.main__section__inner__form__group__select
-                %option{value: ""} ---
-                %option{value: "1"}
-                  送料込み（出品者負担）
-                %option{value: "2"}
-                  着払い（購入者負担）
+              = f.select :shipping_method, [["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {include_blank: "---"}
             .main__section__inner__form__group
               %h3.main__section__inner__form__group__subCategory
                 発送元の地域
@@ -195,14 +150,7 @@
               %h3.main__section__inner__form__group__subCategory
                 発送までの日数
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              %select.main__section__inner__form__group__select
-                %option{value: ""} ---
-                %option{value: "1"}
-                  1~2で発送
-                %option{value: "2"}
-                  2~3で発送
-                %option{value: "3"}
-                  4~7で発送
+              = f.select :shipping_timetable, [["1~2で発送", "1~2で発送"], ["2~3で発送", "2~3で発送"], ["4~7で発送", "4~7で発送"]], {include_blank: "---"}
         .main__section__inner.clearfix
           %h3.main__section__inner__subCategory
             販売価格(300〜9,999,999)
@@ -232,6 +180,6 @@
           %br/
           また、出品をもちまして加盟店規約に同意したことになります。
           %button.button 出品する
-          %button.back 戻る
+          = link_to "戻る", :back, {class: "back"}
 
   = render "logo/footer"
