@@ -1,15 +1,15 @@
 <nav class="nav">
   <ul>
     <li>
-      <a href="#" >
+      <%= link_to, "" do %>
         <span>メルカリ</span>
-      </a>
+      <% end %>
       <i></i>
     </li>
     <li>
-      <a href="#" >
+      <%= link_to, "" do %>
         <span>NIKE DUNK HIGH PREMIUM SB "BAOHAUS"</span>
-      </a>
+      <% end %>
     </li>
   </ul>
 </nav>
@@ -19,23 +19,23 @@
   <div class="item-container__main clearfix">
     <div class="item-container__main-photo">
       <div class="item-container__main-photo-main">
-        <img src="https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871" alt="">
+        <%= image_tag("https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871") %>
       </div>
       <div class="item-container__main-photo-bottom">
         <div class="item-container__main-photo-bottom-ele">
-          <img src="https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871" alt="">
+          <%= image_tag("https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871") %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_2.jpg?1548561871" alt="">
+          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_2.jpg?1548561871") %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_3.jpg?1548561871" alt="">
+          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_3.jpg?1548561871") %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_4.jpg?1548561871" alt="">
+          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_4.jpg?1548561871") %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <img src="https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_5.jpg?1548561871" alt="">
+          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_5.jpg?1548561871") %>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
         <tr>
           <th>出品者</th>
           <td>
-            <a href="#">ROMI</a>
+            <%= link_to, "ROMI", "" %>
             <div>
               <div class="item-container__main-table-rating">
                 <i class="item-container__main-table-rating-normal-good"></i>
@@ -64,31 +64,31 @@
         <tr>
           <th>カテゴリー</th>
           <td class="item-container__main-table-category">
-            <a href="#">
+            <%= link_to, "" do %>
               <div>
                 メンズ
               </div>
-            </a>
-            <a href="#">
+            <% end %>
+            <%= link_to, "" do %>
               <div>
                 <i></i>靴
               </div>
-            </a>
-            <a href="#">
+            <% end %>
+            <%= link_to, "" do %>
               <div>
                 <i></i>スニーカー
               </div>
-            </a>
+            <% end %>
           </td>
         </tr>
         <tr>
           <th>ブランド</th>
           <td>
-            <a href="#" >
-            <div>
-              ナイキ
-            </div>
-          </a>
+            <%= link_to, "" do %>
+              <div>
+                ナイキ
+              </div>
+            <% end %>
           </td>
         </tr>
         <tr>
@@ -110,7 +110,7 @@
         <tr>
           <th>配送元地域</th>
           <td>
-            <a href="#">神奈川県</a>
+            <%= link_to "神奈川県", "" %>
           </td>
         </tr>
         <tr>
@@ -125,7 +125,7 @@
     <span class="item-container__price-tax">(税込)</span>
     <span class="item-container__price-fee">送料込み</span>
   </div>
-  <a class="item-container__buy" href="">購入画面に進む</a>
+  <%= link_to "購入画面に進む", "", { class: "item-container__buy" } %>
   <div class="item-container__description">
     <p>ナイキ ダンクハイプレミアム エスビー "バオハウス"
 
@@ -148,58 +148,64 @@
   </div>
   <div class="item-container__button clearfix">
     <div class="item-container__button-left">
-      <a class="item-container__button-left-like" href="#">
+      <%= link_to, "", { class: "item-container__button-left-like" } do %>
         <i></i>
         <span>いいね！</span>
         <span data-num="like">6</span>
-      </a>
-      <a class="item-container__button-left-report" href="#">
+      <% end %>
+      <%= link_to, "", { class: "item-container__button-left-report" } do %>
         <i></i>
         <span>不適切な商品の報告</span>
-      </a>
+      <% end %>
     </div>
     <div class="item-container__button-right">
-      <a href="#">
+      <%= link_to, "" do %>
         <i></i>
         <span>あんしん・あんぜんへの取り組み</span>
-      </a>
+      <% end %>
     </div>
   </div>
 </section>
 <ul class="item-link clearfix">
   <li class="item-link-prev">
-    <a href="#">
+    <%= link_to, "" do %>
       <i></i>あずささま専用ページ
-    </a>
+    <% end %>
   </li>
   <li class="item-link-next">
-    <a href="#">
+    <%= link_to, "" do %>
       産経 関西ジャニーズjr vol.51,52<i></i>
-    </a>
+    <% end %>
   </li>
 </ul>
 <div class="item-social-media-box">
   <ul>
     <li>
-      <a href="" ><i class="item-social-media-box-facebook"></i></a>
+      <%= link_to, "" do %>
+        <i class="item-social-media-box-facebook"></i>
+      <% end %>
     </li>
     <li>
-      <a href="" ><i class="item-social-media-box-twetter"></i></a>
+      <%= link_to, "" do %>
+        <i class="item-social-media-box-twetter"></i>
+      <% end %>
     </li>
     <li>
-      <a href="" ><i class="item-social-media-box-pinterest"></i></a>
+      <%= link_to, "" do %>
+        <i class="item-social-media-box-pinterest"></i>
+      <% end %>
     </li>
   </ul>
 </div>
 <div class="item-exhibitor">
   <section class="item-exhibitor__item-box">
     <h2>
-      <a href="#">ROMIさんのその他の出品</a>
+      <%= ink_to "ROMIさんのその他の出品", "" %>
     </h2>
     <div class="item-exhibitor__item-box-content clearfix">
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>ネットdeきれい＊セーター・ジャケット用</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -213,11 +219,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>ネットdeきれい＊セーター・ジャケット用</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -231,11 +237,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>ネットdeきれい＊セーター・ジャケット用</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -249,11 +255,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>ネットdeきれい＊セーター・ジャケット用</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -267,11 +273,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>ネットdeきれい＊セーター・ジャケット用</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -285,17 +291,17 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
     </div>
     <section class="item-exhibitor__item-box">
     <h2>
-      <a href="#">ナイキのスニーカー その他の商品</a>
+      <%= link_to "ナイキのスニーカー その他の商品", "" %>
     </h2>
     <div class="item-exhibitor__item-box-content clearfix">
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>モテアン 白赤</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -309,11 +315,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>モテアン 白赤</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -327,11 +333,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>モテアン 白赤</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -345,11 +351,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>モテアン 白赤</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -363,11 +369,11 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
       <section class="item-exhibitor__item-box-content--box">
-        <a href="#">
-          <img src="https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169" alt="">
+        <%= link_to, "" do %>
+          <%= image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169") %>
           <div class="item-exhibitor__item-box-content--box-body">
             <h3>モテアン 白赤</h3>
             <div class="item-exhibitor__item-box-content--box-body-bottom clearfix">
@@ -381,7 +387,7 @@
               <p>(税込)</p>
             </div>
           </div>
-        </a>
+        <% end %>
       </section>
     </div>
   </section>
