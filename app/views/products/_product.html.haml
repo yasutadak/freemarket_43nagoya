@@ -1,0 +1,14 @@
+%section.item-exhibitor__item-box-content--box
+  %a{:href => "#"}
+    %img{:alt => "", :src => "https://mcdn.mercariapp.com/thumb/photos/m68337163107_1.jpg?1545590936"}/
+    .item-exhibitor__item-box-content--box-body
+      %h3
+        = product.name
+      .item-exhibitor__item-box-content--box-body-bottom.clearfix
+        .item-exhibitor__item-box-content--box-body-bottom-price
+          = product.price.to_s(:currency, precision: 0, unit: "¥ ")
+        .item-exhibitor__item-box-content--box-body-bottom-like
+          %i
+          / アイコンを追加すること
+          %span
+        %p (税込)
