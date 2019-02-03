@@ -3,5 +3,17 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.save
+  end
+
+  private
+
+  def product_params
+    params[:product].require(:product).permit(:name, :status, :shipping_method, :region, :shipping_timetable, :price, :description, :seller_id)
   end
 end
