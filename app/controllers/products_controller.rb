@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
     @products = Product.order("created_at DESC").limit(3)
   end
 
+  def list
+    @products = Product.order("created_at DESC").page(params[:page]).per(12)
+  end
+
   def new
   end
 

@@ -28,7 +28,6 @@
             新着アイテム
         .item-exhibitor__item-box-content.clearfix
           = render @products
-        %a.all-item-link{href: ""}
-          すべての商品を見る
+          = link_to "すべての商品を見る", list_products_path, class: "all-item-link"
 
 = render "/shared/footer"
