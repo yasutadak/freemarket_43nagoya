@@ -3,7 +3,7 @@
   %main.main
     %section.main__section
       %h2 商品の情報を入力
-      = form_for @product do |f|
+      = form_for @product, html: {class:'dropzone', id: "item-dropzone"} do |f|
         .main__section__inner
           %h3.main__section__inner__group__category
             出品画像
