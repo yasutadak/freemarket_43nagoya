@@ -1,0 +1,7 @@
+ja:
+  views:
+    pagination:
+      first: <i class="fa fa-angle-double-left pagination__angle bold"></i>
+      last: <i class="fa fa-angle-double-right pagination__angle bold"></i>
+      previous: <i class="fa fa-angle-left pagination__angle bold"></i>
+      next: <i class="fa fa-angle-right pagination__angle bold"></i>
