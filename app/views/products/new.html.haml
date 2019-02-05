@@ -66,12 +66,12 @@
                   %span.main__section__inner__form__group__left__subCategory__attention 必須
               .main__section__inner__form__group__right
                 ¥
-                = f.text_field :price, placeholder: "例) 300", class: "main__section__inner__form__group__right__price"
+                = f.text_field :price, placeholder: "例) 300", class: "main__section__inner__form__group__right__price", id: "sell-price"
           .main__section__inner__form
             .main__section__inner__form__commission
               .main__section__inner__form__commission__label
                 販売手数料(10%)
-                .main__section__inner__form__commission__label__number -
+                #commission.main__section__inner__form__commission__label__number -
             .main__section__inner__form__profits
               .main__section__inner__form__profits__label
                 販売利益
