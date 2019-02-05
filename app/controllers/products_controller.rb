@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
   end
 
@@ -19,5 +20,8 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :status, :shipping_method, :region, :shipping_timetable, :price, :description)
+  end
+
+  def show
   end
 end

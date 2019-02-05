@@ -9,5 +9,5 @@ class Product < ApplicationRecord
   # validates :price, presence:true, length: { in: 300..9999999 }
 
   belongs_to :seller, class_name: 'User'
-  belongs_to :buyer, class_name: 'User'
+  belongs_to :buyer, class_name: 'User', optional: true
 end
