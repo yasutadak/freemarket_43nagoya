@@ -1,0 +1,53 @@
+.container
+  %header.header
+    %h1
+      %a{:href => "#"}
+        %img{:alt => "logo", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3708647559"}/
+    %nav.header-progress
+      %ol
+        %li
+          会員情報
+          .header-progress-bar-top.completed
+        %li.active
+          電話番号認証
+          .header-progress-bar.active
+        %li
+          住所入力
+          .header-progress-bar
+        %li
+          支払い方法
+          .header-progress-bar
+        %li
+          完了
+          .header-progress-bar-end
+  %main.main
+    %section.main-section
+      %h2 電話番号の確認
+
+      = form_for @user,html: {class: 'main-section__form'}, url: address_new_path do |f|
+        .main-section__form-content
+          .main-section__form-content-group
+            = f.label :携帯電話の番号
+            %span 必須
+            = f.text_field :phone_number, placeholder: "携帯電話の番号を入力"
+          %p.main-section__form-content-error 電話番号の書式を確認してください
+          %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          = f.submit 'SMSを送信する', class: 'main-section__form-content-submit'
+          %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .main-section__form-content-bottom
+            %a{:href => "#"}
+              電話番号の確認が必要な理由
+              %i
+  %footer.footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{:href => "#", :title => ""} プライバシーポリシー
+        %li
+          %a{:href => "#", :title => ""} メルカリ利用規約
+        %li
+          %a{:href => "#", :title => ""} 特定商取引に関する表記
+    %a.footer-icon{:href => "#"}
+      %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3708647559"}/
+    %p
+      %small © 2019 Mercari
