@@ -98,11 +98,12 @@ a {
   }
   nav.right-box {
     float: right;
-    a.main-header__btn {
+    .main-header__btn {
+      display: inline-block;
       position: relative;
-      right: 98px;
+      right: 17px;
       bottom: 28px;
-      padding: 7px;
+      padding: 0 10px;
       line-height: 30px;
       border-radius: 4px;
       text-align: center;
@@ -111,11 +112,12 @@ a {
       color: #fff;
       font-size: 14px;
     }
-    a.main-header__signup {
+    .main-header__signup {
+      display: inline-block;
       position: relative;
       right: 10px;
-      bottom: 58px;
-      padding: 7px;
+      bottom: 28px;
+      padding: 0 10px;
       line-height: 30px;
       border-radius: 4px;
       border: 1px solid #0099e8;
@@ -125,4 +127,3 @@ a {
     }
   }
 }
-

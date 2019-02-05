@@ -82,10 +82,10 @@
                     ブランド一覧
 
       %nav.right-box
-        %ul.header-nav
-          %li
-            %a.main-header__btn{href: ""}
+        .header-nav
+          = link_to root_path do
+            .main-header__btn
               ログイン
-          %li
-            %a.main-header__signup{href: ""}
+          = link_to membership_new_path do
+            .main-header__signup
               新規会員登録
