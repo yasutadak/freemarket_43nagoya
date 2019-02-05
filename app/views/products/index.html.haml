@@ -24,8 +24,7 @@
         %h2
           商品一覧
         .item
-          %a.item__link{href: ""}
-            新着アイテム
+          = link_to "新着アイテム", list_products_path, class: "item__link"
         .item-exhibitor__item-box-content.clearfix
           = render @products
           = link_to "すべての商品を見る", list_products_path, class: "all-item-link"
