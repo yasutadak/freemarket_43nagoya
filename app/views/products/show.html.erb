@@ -109,7 +109,7 @@
     <span class="item-container__price-price"><%= price_format(@product.price) %></span>
     <span class="item-container__price-tax">(税込)</span>
     <span class="item-container__price-fee">
-      <%= @product.shipping_burden == 0 ? "送料込み" : "着払い" %>
+      <%= @product.shipping_burden == "送料込み(出品者負担)" ? "送料込み" : "着払い" %>
     </span>
   </div>
   <%= link_to "購入画面に進む", "", { class: "item-container__buy" } %>
