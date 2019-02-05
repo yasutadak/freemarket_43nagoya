@@ -8,12 +8,16 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
+    if @product.save
+      redirect_to action: 'index'
+    else
+      redirect_to action: 'new'
+    end
   end
 
   private
 
   def product_params
-    params[:product].require(:product).permit(:name, :status, :shipping_method, :region, :shipping_timetable, :price, :description, :seller_id)
+    params.require(:product).permit(:name, :status, :shipping_method, :region, :shipping_timetable, :price, :description)
   end
 end
