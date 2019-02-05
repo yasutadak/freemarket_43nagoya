@@ -22,4 +22,4 @@ config/secrets.yml
 
 app/assets/images
 
-db/migrate/seeds.rb
+db/seeds.rb
