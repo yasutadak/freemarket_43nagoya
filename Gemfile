@@ -72,7 +72,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'kaminari', '~> 0.17.0'
-gem 'rb-readline'
 
 group :production do
   gem 'unicorn'
