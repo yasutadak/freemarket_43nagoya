@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to action: 'index'
     else
-      redirect_to action: 'new'
+      render 'new'
     end
   end
 
