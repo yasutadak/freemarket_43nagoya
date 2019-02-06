@@ -138,14 +138,14 @@
 </section>
 <ul class="item-link clearfix">
   <li class="item-link-prev">
-    <% if @product.prev %>
+    <% if @product.prev_id %>
       <%= link_to product_path(@product.prev) do %>
         <i class="fas fa-chevron-left item-link__angle"></i><%= @product.prev.name %>
       <% end %>
     <% end %>
   </li>
   <li class="item-link-next">
-    <% if @product.next %>
+    <% if @product.next_id %>
       <%= link_to product_path(@product.next) do %>
         <%= @product.next.name %><i class="fas fa-chevron-right item-link__angle"></i>
       <% end %>
