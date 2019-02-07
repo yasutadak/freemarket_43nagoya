@@ -28,7 +28,7 @@ form.search-box {
   position: relative;
   float: right;
   input.search-form {
-    border: 1px solid #ccc;
+    border: 1px solid $lightGray;
     border-radius: 2px;
     height: 38px;
     width: calc(100% - 20px);
