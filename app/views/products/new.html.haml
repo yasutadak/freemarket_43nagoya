@@ -9,7 +9,12 @@
           %h3.main__section__inner__group__category
             出品画像
             %span.main__section__inner__group__category__attention 必須
-          %p 画像を10枚アップロードできます
+          %p 画像を1枚アップロードできます
+          = f.file_field :image
+          = f.hidden_field :image_cache
+          - if @product.errors.any?
+            .error-message
+              画像がありません
         .main__section__inner
           .main__section__inner__group
             %h3.main__section__inner__group__category
