@@ -7,7 +7,7 @@
       %input.search-form{type: "search", name: "keyword", placeholder: "キーワードから探す"}
       / = form_for [] do |f|
       /   = f.text_field :product, class: "search-form", placeholder: "何をお探しですか?"
-      %i.fa.fa-search
+      = fa_icon "search"
     .main-header__nav-box
       %nav.left-box
         %ul.search-box
