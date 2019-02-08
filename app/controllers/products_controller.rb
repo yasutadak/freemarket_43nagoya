@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
   def show
     @product = Product.find(params[:id])
     @products = Product.where(seller_id: @product.seller).where.not(id: @product.id).order("id DESC").limit(6)
