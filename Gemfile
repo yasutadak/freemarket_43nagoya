@@ -71,6 +71,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'kaminari', '~> 0.17.0'
 
 group :production do
   gem 'unicorn'
