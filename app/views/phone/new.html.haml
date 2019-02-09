@@ -1,7 +1,7 @@
 .container
   %header.header
     %h1
-      %a{:href => "#"}
+      = link_to root_path do
         %img{:alt => "logo", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3708647559"}/
     %nav.header-progress
       %ol
@@ -23,13 +23,15 @@
   %main.main
     %section.main-section
       %h2 電話番号の確認
-
-      = form_for @user,html: {class: 'main-section__form'}, url: address_new_path do |f|
+      = form_for resource,html: {class: 'main-section__form'}, url: phone_create_path do |f|
         .main-section__form-content
           .main-section__form-content-group
             = f.label :携帯電話の番号
             %span 必須
             = f.text_field :phone_number, placeholder: "携帯電話の番号を入力"
+            - resource.errors.full_messages_for(:phone_number).each do |message|
+              .validation-error-mesage
+                = message
           %p.main-section__form-content-error 電話番号の書式を確認してください
           %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           = f.submit 'SMSを送信する', class: 'main-section__form-content-submit'
