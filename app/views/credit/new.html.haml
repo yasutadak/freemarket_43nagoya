@@ -31,7 +31,7 @@
           .main-section__form-content-group
             = f.label   :カード番号
             %span 必須
-            = f.text_field :building, placeholder: "半角数字のみ"
+            = f.text_field :building, placeholder: "半角数字のみ" # まだクレジット機能の追加をしていないため、仮のカラム
           .main-section__form-content-card
             %ul
               %li
@@ -51,14 +51,14 @@
           .main-section__form-content-group
             = f.label :有効期限
             %span 必須
-            = f.select :building, {}, {}, class: "month-year"
+            = f.select :building, {}, {}, class: "month-year"  # まだクレジット機能の追加をしていないため、仮のカラム
             %i
-            = f.select :building, {}, {}, class: "month-year"
+            = f.select :building, {}, {}, class: "month-year"  # まだクレジット機能の追加をしていないため、仮のカラム
             %i
           .main-section__form-content-group
             = f.label :セキュリティーコード
             %span 必須
-            = f.text_field :building, placeholder: "カード背面4桁もしくは3桁の番号"
+            = f.text_field :building, placeholder: "カード背面4桁もしくは3桁の番号"  # まだクレジット機能の追加をしていないため、仮のカラム
           .main-section__form-content-group
           = f.submit '次へ進む', class: 'main-section__form-content-submit'
   %footer.footer
