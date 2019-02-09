@@ -73,6 +73,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'pry-rails'
 gem 'jp_prefecture'
+gem 'kaminari', '~> 0.17.0'
 
 group :production do
   gem 'unicorn'
