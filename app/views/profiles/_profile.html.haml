@@ -1,6 +1,6 @@
 .profile
   %h2.profile__heading プロフィール
-  = form_for @user, :url => { :controller => :profiles, :action => :update } do |f|
+  = form_for @user, url: { controller: :profiles, action: :update } do |f|
     .profile__header
       .profile__header__userImage
       = f.text_field :nickname, placeholder: "例)AYA☆セール中", class: "profile__header__userName"

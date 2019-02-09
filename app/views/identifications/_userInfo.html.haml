@@ -3,7 +3,7 @@
     %h2 本人情報の登録
     .user-info-section-attenction お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
     .user-info-section__form
-      = form_for @user, :url => { :controller => :identifications, :action => :update }, class: "user-info-section__form-content" do |f|
+      = form_for @user, url: { controller: :identifications, action: :update }, class: "user-info-section__form-content" do |f|
         .user-info-section__form-content-group
           = f.label :family_name do
             お名前
