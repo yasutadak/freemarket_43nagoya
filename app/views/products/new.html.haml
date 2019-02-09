@@ -65,10 +65,16 @@
               %h3.main__section__inner__form__group__subCategory
                 配送料の負担
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              = f.select :shipping_method, [["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {include_blank: "---"}
+              = f.select :shipping_burden, [["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {include_blank: "---"}, {class: "selectburden"}
               - if @product.errors.any?
                 .error-message
                   選択してください
+            .main__section__inner__form__group
+              %h3.main__section__inner__form__group__subCategory__hidden
+                配送の方法
+                %span.main__section__inner__form__group__subCategory__attention__hidden 必須
+              = f.select :shipping_method, [["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]], {include_blank: "---"}, {class: "selectmethod-1"}
+              = f.select :shipping_method, [["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"],], {include_blank: "---"}, {class: "selectmethod-2"}
             .main__section__inner__form__group
               %h3.main__section__inner__form__group__subCategory
                 発送元の地域

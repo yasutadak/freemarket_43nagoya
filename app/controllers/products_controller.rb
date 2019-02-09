@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.status
+    @product.shipping_burden
+    @product.shipping_method
+    @product.shipping_timetable
     if @product.save
       redirect_to action: 'index'
     else
@@ -24,7 +28,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :status, :shipping_method, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: 1)
+    params.require(:product).permit(:name, :status, :shipping_method, :shipping_burden, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: 1)
   end
 
   def show
