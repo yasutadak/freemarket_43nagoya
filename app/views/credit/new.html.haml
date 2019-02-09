@@ -1,0 +1,76 @@
+.container
+  %header.header
+    %h1
+      = link_to root_path do
+        %img{:alt => "logo", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3708647559"}/
+    %nav.header-progress
+      %ol
+        %li
+          会員情報
+          .header-progress-bar-top.completed
+        %li
+          電話番号認証
+          .header-progress-bar.completed
+        %li
+          住所入力
+          .header-progress-bar.completed
+        %li.active
+          支払い方法
+          .header-progress-bar.active
+        %li
+          完了
+          .header-progress-bar-end
+  %main.main
+    - resource.errors.full_messages.each do |message|
+      = message
+    = devise_error_messages!
+    %section.main-section
+      %h2 支払い方法
+      = form_for resource, html: {class: 'main-section__form'}, url: credit_create_path do |f|
+        .main-section__form-content.credit-card
+          .main-section__form-content-group
+            = f.label   :カード番号
+            %span 必須
+            = f.text_field :building, placeholder: "半角数字のみ"
+          .main-section__form-content-card
+            %ul
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2540802024", :width => "49"}/
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2540802024", :width => "34"}/
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2540802024", :width => "30"}/
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2540802024", :width => "32"}/
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2540802024", :width => "21"}/
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2540802024", :width => "32"}/
+              %li
+                %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2540802024", :width => "32"}/
+          .main-section__form-content-group
+            = f.label :有効期限
+            %span 必須
+            = f.select :building, {}, {}, class: "month-year"
+            %i
+            = f.select :building, {}, {}, class: "month-year"
+            %i
+          .main-section__form-content-group
+            = f.label :セキュリティーコード
+            %span 必須
+            = f.text_field :building, placeholder: "カード背面4桁もしくは3桁の番号"
+          .main-section__form-content-group
+          = f.submit '次へ進む', class: 'main-section__form-content-submit'
+  %footer.footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{:href => "#", :title => ""} プライバシーポリシー
+        %li
+          %a{:href => "#", :title => ""} メルカリ利用規約
+        %li
+          %a{:href => "#", :title => ""} 特定商取引に関する表記
+    %a.footer-icon{:href => "#"}
+      %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3708647559"}/
+    %p
+      %small © 2019 Mercari
