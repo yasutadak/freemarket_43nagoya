@@ -1,0 +1,100 @@
+.container
+  %header.header
+    %h1
+      = link_to root_path do
+        %img{:alt => "logo", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3708647559"}/
+    %nav.header-progress
+      %ol
+        %li
+          会員情報
+          .header-progress-bar-top.completed
+        %li
+          電話番号認証
+          .header-progress-bar.completed
+        %li.active
+          住所入力
+          .header-progress-bar.active
+        %li
+          支払い方法
+          .header-progress-bar
+        %li
+          完了
+          .header-progress-bar-end
+  %main.main
+    %section.main-section
+      %h2 住所入力
+      = form_for resource,html: {class: 'main-section__form'}, url: address_create_path do |f|
+        .main-section__form-content-address
+          .main-section__form-content-group
+            = f.label :お名前
+            %span 必須
+            = f.text_field :family_name, placeholder: "例）山田"
+            - resource.errors.full_messages_for(:family_name).each do |message|
+              .validation-error-mesage
+                = message
+            = f.text_field :first_name, placeholder: "例）彩"
+            - resource.errors.full_messages_for(:first_name).each do |message|
+              .validation-error-mesage
+                = message
+          .main-section__form-content-group
+            = f.label :お名前カナ
+            %span 必須
+            = f.text_field :family_katakana, placeholder: "例）ヤマダ"
+            - resource.errors.full_messages_for(:family_katakana).each do |message|
+              .validation-error-mesage
+                = message
+            = f.text_field :first_katakana, placeholder: "例）アヤ"
+            - resource.errors.full_messages_for(:first_katakana).each do |message|
+              .validation-error-mesage
+                = message
+          .main-section__form-content-group
+            = f.label :郵便番号
+            %span 必須
+            = f.text_field :postal_code, placeholder: "例）123-4567"
+            - resource.errors.full_messages_for(:postal_code).each do |message|
+              .validation-error-mesage
+                = message
+          .main-section__form-content-group
+            = f.label :都道府県
+            %span 必須
+            = f.select :domicile_pref, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["愛媛県", "愛媛県"], ["香川県", "香川県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"]], {include_blank: "---"}
+            - resource.errors.full_messages_for(:domicile_pref).each do |message|
+              .validation-error-mesage
+                = message
+            %i
+          .main-section__form-content-group
+            = f.label :市区町村
+            %span 必須
+            = f.text_field :domicile_city, placeholder: "例）横浜市緑区"
+            - resource.errors.full_messages_for(:domicile_city).each do |message|
+              .validation-error-mesage
+                = message
+          .main-section__form-content-group
+            = f.label :番地
+            %span 必須
+            = f.text_field :domicile_add, placeholder: "例）青山1-1-1"
+            - resource.errors.full_messages_for(:domicile_add).each do |message|
+              .validation-error-mesage
+                = message
+          .main-section__form-content-group
+            = f.label :建物名
+            %span.any 任意
+            = f.text_field :building, placeholder: "例）柳ビル103"
+          .main-section__form-content-group
+            = f.label :電話番号
+            %span.any 任意
+            = f.text_field :building, placeholder: "例）09012345678"
+          = f.submit '次へ進む', class: 'main-section__form-content-submit'
+  %footer.footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{:href => "#", :title => ""} プライバシーポリシー
+        %li
+          %a{:href => "#", :title => ""} メルカリ利用規約
+        %li
+          %a{:href => "#", :title => ""} 特定商取引に関する表記
+    %a.footer-icon{:href => "#"}
+      %img{:alt => "", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3708647559"}/
+    %p
+      %small © 2019 Mercari
