@@ -4,9 +4,7 @@ class IdentificationsController < ApplicationController
   end
 
   def update
-
     @user = User.find(params[:user_id])
-    # binding.pry
     if @user.update(indentification_params)
       redirect_to user_path(params[:user_id])
     else
