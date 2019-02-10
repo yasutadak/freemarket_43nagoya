@@ -114,6 +114,9 @@
   </div>
   <%= link_to "購入画面に進む", "", { class: "item-container__buy" } %>
   <div class="item-container__description">
+  </div>
+  <%= link_to "商品の編集", edit_product_path(@product), { class: "item-container__edit" } %>
+  <div class="item-container__description">
     <p><%= @product.description %></p>
   </div>
   <div class="item-container__button clearfix">

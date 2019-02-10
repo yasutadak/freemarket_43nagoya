@@ -249,6 +249,19 @@ body {
     font-size: 24px;
     text-decoration: none;
   }
+  &__edit {
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    margin: 16px 0 0;
+    background: #32cd32;
+    color: #fff;
+    line-height: 56px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: none;
+  }
   &__description {
     padding: 32px 0 0;
     p {
