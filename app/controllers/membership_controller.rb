@@ -12,7 +12,6 @@ class MembershipController < Devise::RegistrationsController
       build_resource(sign_up_params)
       redirect_to  phone_new_path
     else
-      binding.pry
       render  membership_new_path
     end
   end
