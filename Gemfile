@@ -72,6 +72,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'rails-i18n'
 gem 'jp_prefecture'
 gem 'kaminari', '~> 0.17.0'
 
