@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :bought_products, foreign_key: 'buyer_id', class_name: 'Product'
 
   with_options on: [:registration_step_1] do
-    validates :nickname,  presence: true
+    validates :nickname,  presence: true,  length: { maximum: 20 }
   end
 
   with_options on: [:registration_step_2] do
@@ -17,10 +17,9 @@ class User < ApplicationRecord
   with_options on: [:registration_step_3] do
     validates :family_name,  presence: true
     validates :first_name,  presence: true
-    validates :family_katakana,  presence: true
-    validates :family_katakana, format: { with: /[\p{katakana} ー－&&[^ -~｡-ﾟ]]+/, allow_blank: true}
+    validates :family_katakana,  presence: true, format: { with: /[\p{katakana} ー－&&[^ -~｡-ﾟ]]+/, allow_blank: true}
     validates :first_katakana,  presence: true, format: { with: /[\p{katakana} ー－&&[^ -~｡-ﾟ]]+/, allow_blank: true}
-    validates :postal_code,  presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, allow_blank: true}
+    validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, allow_blank: true}
     validates :domicile_pref,  presence: true
     validates :domicile_city,  presence: true
     validates :domicile_add,  presence: true
