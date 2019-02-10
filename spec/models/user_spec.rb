@@ -21,7 +21,7 @@ describe User do
     end
 
     it "is invalid without a password_confirmation although with a password" do
-      user = build(:user, password_confirmation: "")
+      user = build(:user, password_confirmation: "0101")
       user.valid?(:registration_step_1)
       expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
@@ -141,6 +141,12 @@ describe User do
       user =  build(:user, domicile_add: "")
       user.valid?(:registration_step_3)
       expect(user.errors[:domicile_add]).to include("を入力してください")
+    end
+
+    it "is invalid without a postal_code" do
+      user =  build(:user, postal_code: "")
+      user.valid?(:registration_step_3)
+      expect(user.errors[:postal_code]).to include("を入力してください")
     end
 
     it "postal_code use alphabet" do

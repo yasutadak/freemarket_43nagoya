@@ -2,7 +2,7 @@ FactoryGirl.define do
 
   factory :user do
     nickname              "test"
-    email                 "test@gmail.com"
+    sequence(:email) { Faker::Internet.email }
     password              "00000000"
     phone_number          "00000000000"
     family_name           "てすと"
@@ -15,5 +15,4 @@ FactoryGirl.define do
     domicile_add          "100丁目"
     building              "テストアパート101"
   end
-
 end

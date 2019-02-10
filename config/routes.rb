@@ -16,6 +16,14 @@ Rails.application.routes.draw do
   end
 
   root 'products#index'
-  resources :users
-  resources :products
+  resources :users, only: [:show] do
+    resource :logout
+    resource :identification
+    resource :profile
+  end
+  resources :products, only: [:index, :new, :show] do
+    collection do
+      get 'list'
+    end
+  end
 end
