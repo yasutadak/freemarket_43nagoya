@@ -14,10 +14,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.status
-    @product.shipping_burden
-    @product.shipping_method
-    @product.shipping_timetable
     if @product.save
       redirect_to action: 'index'
     else

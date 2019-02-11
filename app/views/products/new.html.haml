@@ -11,10 +11,10 @@
             %span.main__section__inner__group__category__attention 必須
           %p 画像を1枚アップロードできます
           = f.file_field :image
-          = f.hidden_field :image_cache
           - if @product.errors.any?
-            .error-message
-              画像がありません
+            %ul.error_msg
+              = @product.errors.messages[:image][0]
+
         .main__section__inner
           .main__section__inner__group
             %h3.main__section__inner__group__category
@@ -22,24 +22,16 @@
               %span.main__section__inner__group__category__attention 必須
             = f.text_field :name, class: "main__section__inner__group__textfield", placeholder: "商品名（必須 40文字まで)"
             - if @product.errors.any?
-              - if @product.name.length > 40
-                .error-message
-                  40文字以下で入力してください
-              - elsif @product.name.length == 0
-                .error-message
-                  入力してください
+              %ul.error_msg
+                = @product.errors.messages[:name][0]
           .main__section__inner__group
             %h3.main__section__inner__group__category
               商品の説明
               %span.main__section__inner__group__category__attention 必須
             = f.text_area :description, class: "main__section__inner__group__textarea", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
             - if @product.errors.any?
-              - if @product.description.length > 1000
-                .error-message
-                  1000文字以下で入力してください
-              - elsif @product.description.length == 0
-                .error-message
-                  入力してください
+              %ul.error_msg
+                = @product.errors.messages[:description][0]
         .main__section__inner.clearfix
           %h3.main__section__inner__subCategory
             商品詳細
@@ -53,10 +45,10 @@
               %h3.main__section__inner__form__group__subCategory
                 商品の状態
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              = f.select :status, [["新品・未使用", "新品・未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], {include_blank: "---"}
+              = f.select :status, Product.statuses_i18n.invert, {include_blank: "---"}
               - if @product.errors.any?
-                .error-message
-                  選択してください
+                %ul.error_msg
+                  = @product.errors.messages[:status][0]
         .main__section__inner.clearfix
           %h3.main__section__inner__subCategory
             配送料について
@@ -65,32 +57,34 @@
               %h3.main__section__inner__form__group__subCategory
                 配送料の負担
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              = f.select :shipping_burden, [["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {include_blank: "---"}, {class: "selectburden"}
+              = f.select :shipping_burden, Product.shipping_burdens_i18n.invert, {include_blank: "---"}, {class: "selectburden"}
               - if @product.errors.any?
-                .error-message
-                  選択してください
+                %ul.error_msg
+                  = @product.errors.messages[:shipping_burden][0]
             .main__section__inner__form__group
               %h3.main__section__inner__form__group__subCategory__hidden
                 配送の方法
                 %span.main__section__inner__form__group__subCategory__attention__hidden 必須
-              = f.select :shipping_method, [["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]], {include_blank: "---"}, {class: "selectmethod-1"}
-              = f.select :shipping_method, [["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"],], {include_blank: "---"}, {class: "selectmethod-2"}
+              = f.select :shipping_method, Product.shipping_methods_i18n.invert, {include_blank: "---"}, {class: "selectmethod-1"}
+              - if @product.errors.any?
+                %ul#hidden.error_msg
+                  = @product.errors.messages[:shipping_method][0]
             .main__section__inner__form__group
               %h3.main__section__inner__form__group__subCategory
                 発送元の地域
                 %span.main__section__inner__form__group__subCategory__attention 必須
               = f.select :region, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["愛媛県", "愛媛県"], ["香川県", "香川県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"]], {include_blank: "---"}
               - if @product.errors.any?
-                .error-message
-                  選択してください
+                %ul.error_msg
+                  = @product.errors.messages[:region][0]
             .main__section__inner__form__group
               %h3.main__section__inner__form__group__subCategory
                 発送までの日数
                 %span.main__section__inner__form__group__subCategory__attention 必須
-              = f.select :shipping_timetable, [["1~2で発送", "1~2で発送"], ["2~3で発送", "2~3で発送"], ["4~7で発送", "4~7で発送"]], {include_blank: "---"}
+              = f.select :shipping_timetable, Product.shipping_timetables_i18n.invert, {include_blank: "---"}
               - if @product.errors.any?
-                .error-message
-                  選択してください
+                %ul.error_msg
+                  = @product.errors.messages[:shipping_timetable][0]
         .main__section__inner.clearfix
           %h3.main__section__inner__subCategory
             販売価格(300〜9,999,999)
@@ -104,8 +98,8 @@
                 ¥
                 = f.text_field :price, placeholder: "例) 300", class: "main__section__inner__form__group__right__price", id: "sell-price"
                 - if @product.errors.any?
-                  #price.error-message
-                    300以上9999999以下で入力してください
+                  %ul.error_msg_price
+                    = @product.errors.messages[:price][0]
           .main__section__inner__form
             .main__section__inner__form__commission
               .main__section__inner__form__commission__label

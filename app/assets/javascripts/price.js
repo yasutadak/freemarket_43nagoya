@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   var maxNum = 9999999;
   var minNum = 300;
   var rate = 0.1;

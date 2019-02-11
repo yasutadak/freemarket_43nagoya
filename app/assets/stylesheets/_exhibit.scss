@@ -287,11 +287,14 @@ select{
   cursor: pointer;
 }
 
-.error-message {
+.error_msg {
   color: red;
   padding: 10px 0 0 0;
 }
-#price.error-message {
+#hidden {
+  display: none;
+}
+.error_msg_price {
   color: red;
   padding: 10px 0px 0 0px;
   position: relative;
