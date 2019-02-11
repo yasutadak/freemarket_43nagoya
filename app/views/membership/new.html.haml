@@ -23,7 +23,7 @@
   %main.main
     %section.main-section
       %h2 会員情報入力
-      = form_for resource,html: {class: 'main-section__form'}, url: membership_create_path do |f|
+      = form_for resource,html: {class: 'main-section__form'}, url: membership_new_path do |f|
         .main-section__form-content
           .main-section__form-content-group
             = f.label :ニックネーム
