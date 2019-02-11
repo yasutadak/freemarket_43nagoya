@@ -23,7 +23,7 @@
   %main.main
     %section.main-section
       %h2 住所入力
-      = form_for resource,html: {class: 'main-section__form'}, url: address_create_path do |f|
+      = form_for resource,html: {class: 'main-section__form'}, url: address_new_path do |f|
         .main-section__form-content-address
           .main-section__form-content-group
             = f.label :お名前

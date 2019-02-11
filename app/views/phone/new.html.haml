@@ -23,7 +23,7 @@
   %main.main
     %section.main-section
       %h2 電話番号の確認
-      = form_for resource,html: {class: 'main-section__form'}, url: phone_create_path do |f|
+      = form_for resource,html: {class: 'main-section__form'}, url: phone_new_path do |f|
         .main-section__form-content
           .main-section__form-content-group
             = f.label :携帯電話の番号
