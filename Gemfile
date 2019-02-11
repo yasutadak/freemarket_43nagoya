@@ -75,6 +75,7 @@ gem 'fog-aws'
 gem 'dropzonejs-rails'
 gem 'kaminari', '~> 0.17.0'
 gem 'enum_help'
+gem 'jp_prefecture'
 
 group :production do
   gem 'unicorn'
