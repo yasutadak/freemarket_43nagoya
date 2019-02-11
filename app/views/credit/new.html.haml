@@ -29,7 +29,7 @@
       = form_for resource, html: {class: 'main-section__form'}, url: credit_create_path do |f|
         .main-section__form-content.credit-card
           .main-section__form-content-group
-            = f.label   :カード番号
+            = f.label :カード番号
             %span 必須
             = f.text_field :building, placeholder: "半角数字のみ" # まだクレジット機能の追加をしていないため、仮のカラム
           .main-section__form-content-card
