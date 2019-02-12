@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20190207075531) do
 
+
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                             null: false
     t.integer  "status",                           null: false
@@ -41,7 +42,6 @@ ActiveRecord::Schema.define(version: 20190207075531) do
     t.string   "domicile_city",                                     null: false
     t.string   "domicile_add",                                      null: false
     t.string   "building"
-    t.date     "birthday",                                          null: false
     t.string   "phone_number",                                      null: false
     t.text     "profile",                limit: 65535
     t.string   "nickname",                                          null: false
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20190207075531) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.integer  "birthday_year"
+    t.integer  "birthday_month"
+    t.integer  "birthday_day"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
