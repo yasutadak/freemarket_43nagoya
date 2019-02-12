@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resource :identification
     resource :profile
   end
-  resources :products, only: [:index, :new, :show] do
+  resources :products, only: [:index, :new, :show, :create] do
     collection do
       get 'list'
     end
