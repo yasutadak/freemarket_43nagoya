@@ -2,7 +2,8 @@
   height: 260px;
   width: 100%;
   position: relative;
-  background-color: #A0522D;
+  @include background_footer;
+
   &__box {
     margin: 0 auto;
     height: 260px;

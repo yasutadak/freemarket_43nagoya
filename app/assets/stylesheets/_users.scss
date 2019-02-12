@@ -104,7 +104,7 @@
 
   &__top__header{
     height: 200px;
-    background-color: gray;
+    @include background_profile;
     text-align: center;
     a {
       color: #333;
@@ -302,7 +302,8 @@
   }
   &__header{
     padding: 72px 16px 24px;
-    background-color: gray;
+    @include background_profile;
+    // background-color: gray;
     text-align: center;
     &__userImage{
       display: inline-block;

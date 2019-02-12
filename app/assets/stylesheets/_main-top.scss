@@ -3,12 +3,13 @@
   position: relative;
   bottom: 48px;
   margin-bottom: -48px;
-  background-color: #F3FFD8;
+  @include background_footer_main-top;
 
   &__content {
     height: 100%;
     max-width: 860px;
     margin: 0 auto;
+    position: relative;
     &__box {
       width: 480px;
       padding: 50px 0;
@@ -36,7 +37,7 @@
         width: auto;
         position: absolute;
         top: 0;
-        left: 700px;
+        right: 0;
       }
     }
   }
