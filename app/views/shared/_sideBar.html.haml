@@ -53,7 +53,7 @@
   %h3.myPage__sideBar__setting 設定
   %ul.myPage__sideBar__settingLists
     %li.myPage__sideBar__settingList.myPage__sideBar__myList--events.myPage__sideBar__myList--profile
-      = link_to "/users/#{@user.id}/profile/edit" do
+      = link_to edit_user_profile_path(@user.id) do
         プロフィール
         = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
     %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
