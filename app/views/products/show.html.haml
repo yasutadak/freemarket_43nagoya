@@ -1,0 +1,180 @@
+= render "/shared/header"
+%section.item-container
+  %h1= @product.name
+  .item-container__main.clearfix
+    .item-container__main-photo
+      .item-container__main-photo-main
+        = image_tag("https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871")
+      .item-container__main-photo-bottom
+        .item-container__main-photo-bottom-ele
+          = image_tag("https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871")
+        .item-container__main-photo-bottom-ele
+          = image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_2.jpg?1548561871")
+        .item-container__main-photo-bottom-ele
+          = image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_3.jpg?1548561871")
+        .item-container__main-photo-bottom-ele
+          = image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_4.jpg?1548561871")
+        .item-container__main-photo-bottom-ele
+          = image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_5.jpg?1548561871")
+    %table.item-container__main-table
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to "#{@product.seller.nickname}", ""
+            %div
+              .item-container__main-table-rating
+                %i.fas.fa-laugh.item-container__main-table-rating-good
+                %span 0
+              .item-container__main-table-rating
+                %i.fas.fa-meh.item-container__main-table-rating-normal
+                %span 0
+              .item-container__main-table-rating
+                %i.fas.fa-frown.item-container__main-table-rating-bad
+                %span 0
+        %tr
+          %th カテゴリー
+          %td.item-container__main-table-category
+            = link_to "" do
+              %div
+                仮カテゴリー
+        %tr
+          %th ブランド
+          %td
+            = link_to "" do
+              %div
+        %tr
+          %th 商品の状態
+          %td= @product.status
+        %tr
+          %th 発送料の負担
+          %td= @product.shipping_burden
+        %tr
+          %th 配送の方法
+          %td= @product.shipping_method
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "#{@product.region}", ""
+        %tr
+          %th 発送日の目安
+          %td= @product.shipping_timetable
+  .item-container__price
+    %span.item-container__price-price= price_format(@product.price)
+    %span.item-container__price-tax (税込)
+    %span.item-container__price-fee
+      = @product.shipping_burden == "送料込み(出品者負担)" ? "送料込み" : "着払い"
+  = link_to "購入画面に進む", "", { class: "item-container__buy" }
+  .item-container__description
+  = link_to "商品の編集", edit_product_path(@product), { class: "item-container__edit" }
+  .item-container__description
+    %p= @product.description
+  .item-container__button.clearfix
+    .item-container__button-left
+      = link_to "", { class: "item-container__button-left-like" } do
+        %i
+        %span いいね！
+        %span{"data-num" => "like"} 仮
+      = link_to "", { class: "item-container__button-left-report" } do
+        %i
+        %span 不適切な商品の報告
+    .item-container__button-right
+      = link_to "" do
+        %i
+        %span あんしん・あんぜんへの取り組み
+%ul.item-link.clearfix
+  %li.item-link-prev
+    - if @product.prev_id
+      = link_to product_path(@product.prev_id) do
+        %i.fas.fa-chevron-left.item-link__angle
+        = @product.prev_id.name
+  %li.item-link-next
+    - if @product.next_id
+      = link_to product_path(@product.next_id) do
+        = @product.next_id.name
+        %i.fas.fa-chevron-right.item-link__angle
+.item-social-media-box
+  %ul
+    %li
+      = link_to "" do
+        %i.fab.fa-facebook.item-social-media-box-facebook
+    %li
+      = link_to "" do
+        %i.fab.fa-twitter.item-social-media-box-twetter
+    %li
+      = link_to "" do
+        %i.fab.fa-line.item-social-media-box-line
+    %li
+      = link_to "" do
+        %i.fab.fa-pinterest.item-social-media-box-pinterest
+.item-exhibitor
+  %section.item-exhibitor__item-box
+    %h2
+      = link_to "#{@product.seller.nickname}さんのその他の出品"
+    .item-exhibitor__item-box-content.clearfix
+      = render @products
+    %section.item-exhibitor__item-box
+      %h2
+        = link_to "仮カテゴリー その他の商品", ""
+      .item-exhibitor__item-box-content.clearfix
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+= render "/shared/footer"
