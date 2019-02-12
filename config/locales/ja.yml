@@ -5,14 +5,58 @@ ja:
       last: <i class="fa fa-angle-double-right pagination__angle bold"></i>
       previous: <i class="fa fa-angle-left pagination__angle bold"></i>
       next: <i class="fa fa-angle-right pagination__angle bold"></i>
-
   activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        phone_number: 電話番号
+        family_name: 姓
+        first_name: 名
+        family_katakana: 姓カナ
+        first_katakana: 名カナ
+        postal_code: 郵便番号
+        domicile_pref: 都道府県
+        domicile_city: 市区町村
+        domicile_add: 番地
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  enums:
+    product:
+        status:
+          new_item: 新品、未使用
+          close_new: 未使用に近い
+          no_dirt: 目立った傷や汚れなし
+          little_dirt: やや傷や汚れあり
+          dirt: 傷や汚れあり
+          bad_item: 全体的に状態が悪い
+
+        shipping_burden:
+          exhibitor_burden: 送料込み（出品者負担）
+          purchaser_burden: 着払い（購入者負担）
+
+        shipping_method:
+          undecided: 未定
+          merukari: らくらくメルカリ便
+          yu_mail: ゆうメール
+          letter_pack: レターパック
+          regular_mail: 普通郵便（定形、定形外）
+          kuroneko: クロネコヤマト
+          yu_pack: ゆうパック
+          click_post: クリックポスト
+          yu_packet: ゆうパケット
+
+        shipping_timetable:
+          first_days: 1~2日で発送
+          second_days: 2~3日で発送
+          third_days: 4~7日で発送
   date:
     abbr_day_names:
     - 日

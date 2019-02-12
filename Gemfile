@@ -72,8 +72,11 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
-gem 'jp_prefecture'
+gem 'dropzonejs-rails'
+gem 'rails-i18n'
 gem 'kaminari', '~> 0.17.0'
+gem 'enum_help'
+gem 'jp_prefecture'
 
 group :production do
   gem 'unicorn'
