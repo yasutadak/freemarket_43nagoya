@@ -60,7 +60,6 @@ ul {
 }
 
 .footer {
-  height: 500px;
   width: 100%;
   background-color: #212121;
   text-align: center;
@@ -98,16 +97,13 @@ img.country {
   height: 20px;
 }
 
-img.footer__logo__img {
-  position: relative;
-  top: 450px;
-  right: 630px;
+a.footer__logo {
+  display: block;
+  margin: 40px 0 0;
+  text-align: center;
 }
 
 p.footer__copyright {
-  position: relative;
-  top: 450px;
-  right: 630px;
   color: #fff;
   font-size: 12px;
 }
