@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @products = @user.selling_products.order("id DESC").page(params[:page]).per(3)
+    @products = @user.selling_products.order("id DESC").page(params[:page]).per(6)
   end
 
   private
