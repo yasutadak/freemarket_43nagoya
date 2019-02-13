@@ -12,9 +12,10 @@
             .main-section-inner-container-mail{:href => "#"}
               %i>
               メールアドレスで登録
-          %button#facebook-login.main-section-inner-container-facebook{:type => ""}
-            %i>
-            Facebookで登録
+          = link_to user_facebook_omniauth_authorize_path do
+            %button#facebook-login.main-section-inner-container-facebook{:type => ""}
+              %i>
+              Facebookで登録
           %button#google-login.main-section-inner-container-google{:type => ""}
             %i>
             Googleで登録
