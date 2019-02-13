@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
+    get  'snsphone/new',      to: "snsphone#new"
+    post 'snsphone/new',      to: "snsphone#create"
     get  'membership/new',    to: "membership#new"
     post 'membership/new',    to: "membership#create"
     get  'phone/new',         to: "phone#new"
