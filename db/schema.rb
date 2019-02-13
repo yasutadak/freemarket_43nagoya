@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190212082505) do
+ActiveRecord::Schema.define(version: 20190213074417) do
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                             null: false
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 20190212082505) do
     t.index ["buyer_id"], name: "index_products_on_buyer_id", using: :btree
     t.index ["name"], name: "index_products_on_name", using: :btree
     t.index ["seller_id"], name: "index_products_on_seller_id", using: :btree
+  end
+
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "nickname"
+    t.string   "email"
+    t.string   "password"
+    t.string   "image"
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -54,12 +67,12 @@ ActiveRecord::Schema.define(version: 20190212082505) do
     t.integer  "birthday_year"
     t.integer  "birthday_month"
     t.integer  "birthday_day"
-    t.string   "uid"
-    t.string   "provider"
+    t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "products", "users", column: "buyer_id"
   add_foreign_key "products", "users", column: "seller_id"
+  add_foreign_key "sns_credentials", "users"
 end
