@@ -1,34 +1,20 @@
 .container
-  %header.header
-    %h1
-      %a{:href => "#"}
-        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3708647559"
+  = render 'logo/header'
   %main.main
     %section.main-section
       %h2 新規会員登録
       .main-section-inner
         .main-section-inner-container
           = link_to membership_new_path do
-            .main-section-inner-container-mail{:href => "#"}
+            .main-section-inner-container-mail
               %i>
               メールアドレスで登録
           = link_to user_facebook_omniauth_authorize_path do
-            %button#facebook-login.main-section-inner-container-facebook{:type => ""}
+            %button#facebook-login.main-section-inner-container-facebook
               %i>
               Facebookで登録
-          %button#google-login.main-section-inner-container-google{:type => ""}
+          %button#google-login.main-section-inner-container-google
             %i>
             Googleで登録
-  %footer.footer
-    %nav
-      %ul.clearfix
-        %li
-          %a{:href => "#", :title => ""} プライバシーポリシー
-        %li
-          %a{:href => "#", :title => ""} メルカリ利用規約
-        %li
-          %a{:href => "#", :title => ""} 特定商取引に関する表記
-    %a.footer-icon{:href => "#"}
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3708647559"
-    %p
-      %small © 2019 Mercari
+
+  = render 'logo/footer'
