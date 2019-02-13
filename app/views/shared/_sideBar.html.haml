@@ -1,7 +1,7 @@
 .myPage__sideBar
   %ul.myPage__sideBar__myLists
     %li.myPage__sideBar__myList.myPage__sideBar__myList--events.myPage__sideBar__myList--myPage
-      = link_to user_path(@user.id) do
+      = link_to user_path(@user) do
         マイページ
         = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
     %li.myPage__sideBar__myList.myPage__sideBar__myList--events
