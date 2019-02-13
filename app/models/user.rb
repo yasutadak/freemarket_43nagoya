@@ -38,19 +38,18 @@ class User < ApplicationRecord
   end
 
   def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
-
-    unless user
-      user = User.create(
+    snscredential = SnsCredential.where(uid: auth.uid, provider: auth.provider).first
+    unless snscredential.present?
+      snscredential = SnsCredential.create(
         uid:      auth.uid,
         provider: auth.provider,
         email:    auth.info.email,
-        nickname: auth.info.name,
+        nickname:     auth.info.name,
+        image:    auth.info.image,
         password: Devise.friendly_token[0, 20]
       )
     end
-
-    user
+    snscredential
   end
 
   protected
