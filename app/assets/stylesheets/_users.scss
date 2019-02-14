@@ -2,7 +2,6 @@
   margin:0 auto 0 ;
   width: 1020px;
   padding-bottom:40px;
-  height: 1500px;
   padding-top: 40px;
 
 //sideBar
@@ -22,12 +21,19 @@
     &__myList{
       border:solid 1px #EEE;
       line-height: 1.5;
-      padding: 15px;
       font-size:12px;
       color: #333;
       background-color: #fff;
       & + &{
         border-top:none;
+      }
+      a {
+        color: #333;
+        display: block;
+        padding: 15px;
+        &:visited {
+          color: #333;
+        }
       }
     }
     &__sales{
@@ -44,13 +50,20 @@
     &__salesList{
       border:solid 1px #EEE;
       line-height: 1.5;
-      padding: 15px;
       font-size:12px;
       color: #333;
       background-color: #fff;
 
       & + &{
         border-top:none;
+      }
+      a {
+        color: #333;
+        display: block;
+        padding: 15px;
+        &:visited {
+          color: #333;
+        }
       }
     }
     &__setting{
@@ -91,9 +104,15 @@
 
   &__top__header{
     height: 200px;
-    background-color: gray;
+    @include background_profile;
     text-align: center;
-
+    a {
+      color: #333;
+      display: block;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
     &__userImage{
       width: 60px;
       height: 60px;
@@ -283,7 +302,8 @@
   }
   &__header{
     padding: 72px 16px 24px;
-    background-color: gray;
+    @include background_profile;
+    // background-color: gray;
     text-align: center;
     &__userImage{
       display: inline-block;
