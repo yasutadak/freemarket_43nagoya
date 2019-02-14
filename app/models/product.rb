@@ -25,6 +25,8 @@ class Product < ApplicationRecord
     Product.where("id > ?", self.id).order("id ASC").first
   end
 
+  scope :sort_new_id, -> { order("id DESC") }
+
   enum status: [
     "new_item",
     "close_new",

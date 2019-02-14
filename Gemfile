@@ -77,6 +77,8 @@ gem 'rails-i18n'
 gem 'kaminari', '~> 0.17.0'
 gem 'enum_help'
 gem 'jp_prefecture'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :production do
   gem 'unicorn'
