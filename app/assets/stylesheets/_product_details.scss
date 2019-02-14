@@ -62,9 +62,14 @@ body {
     }
   }
 }
-
+#item-container {
+  padding: 0 40px 40px;
+  background: #fff;
+  margin: 0 auto 0;
+  width: 700px;
+}
 .item-container {
-  padding: 24px 40px 40px;
+  padding: 0 40px 40px;
   background: #fff;
   margin: 40px auto 0;
   width: 700px;
@@ -240,7 +245,7 @@ body {
     height: 60px;
     line-height: 60px;
     display: block;
-    margin: 16px 0 0;
+    margin: 0;
     background: #ea352d;
     color: #fff;
     line-height: 56px;
@@ -250,16 +255,27 @@ body {
     text-decoration: none;
   }
   &__edit {
-    height: 60px;
-    line-height: 60px;
+    height: 45px;
+    line-height: 45px;
     display: block;
-    margin: 16px 0 0;
-    background: #32cd32;
+    margin: 0;
+    background: $red;
     color: #fff;
-    line-height: 56px;
     text-align: center;
-    font-weight: 600;
-    font-size: 24px;
+    font-weight: solid;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  &__delete {
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    background: #aaa;
+    color: #fff;
+    text-align: center;
+    font-weight: solid;
+    font-size: 14px;
     text-decoration: none;
   }
   &__description {

@@ -10,7 +10,17 @@ a.all-item-link {
   float: right;
   padding: 0 0 20px 0;
 }
-
+.edit-container {
+  width: 700px;
+  padding: 24px 40px 40px;
+  background: #fff;
+  margin: 40px auto;
+  &__or {
+    font-size: 15px;
+    text-align: center;
+    margin: 15px;
+  }
+}
 .item-exhibitor {
   width: 700px;
   margin: 0 auto;
@@ -108,5 +118,4 @@ a.all-item-link {
     }
   }
 }
-
 
