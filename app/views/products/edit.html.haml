@@ -1,12 +1,9 @@
 = render "/logo/header"
-
-= render "/shared/exhibitor"
 #container
   %main.main
     %section.main__section
-      .main__section__inner.clearfix
-        = form_for @product do |f|
-          = f.submit "変更する", class: "button"
-          = link_to "キャンセル", :back, {class: "back"}
+      %h2 商品の情報を入力
+      = form_for @product, html: {class:'dropzone', id: "item-dropzone"} do |f|
+        = render "/shared/exhibitor", f: f
 
 = render "/logo/footer"

@@ -22,14 +22,17 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = find_product_id
   end
 
   def update
+    @product = find_product_id
+    @product.update(product_params)
+    redirect_to product_path
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = find_product_id
     @products = Product.where(seller_id: @product.seller).where.not(id: @product.id).order("id DESC").limit(6)
   end
 
@@ -39,4 +42,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :status, :shipping_method, :shipping_burden, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: 1)
   end
 
+  def find_product_id
+    Product.find(params[:id])
+  end
 end

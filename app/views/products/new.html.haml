@@ -1,19 +1,8 @@
 = render "/logo/header"
-
-= render "/shared/exhibitor"
 #container
   %main.main
     %section.main__section
-      .main__section__inner.clearfix
-        = form_for @product do |f|
-          %p
-          禁止されている出品、行為を必ずご確認ください。
-          %br/
-          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-          %br/
-          また、出品をもちまして加盟店規約に同意したことになります。
-          = f.submit "出品する", class: "button"
-          = link_to "戻る", :back, {class: "back"}
-
+      %h2 商品の情報を入力
+      = form_for @product, html: {class:'dropzone', id: "item-dropzone"} do |f|
+        = render "/shared/exhibitor", f: f
 = render "/logo/footer"
-
