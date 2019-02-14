@@ -13,8 +13,9 @@
             %button#facebook-login.main-section-inner-container-facebook
               %i>
               Facebookで登録
-          %button#google-login.main-section-inner-container-google
-            %i>
-            Googleで登録
+          = link_to user_google_omniauth_authorize_path do
+            %button#google-login.main-section-inner-container-google
+              %i>
+              Googleで登録
 
   = render 'logo/footer'

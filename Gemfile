@@ -79,6 +79,7 @@ gem 'enum_help'
 gem 'jp_prefecture'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :production do
   gem 'unicorn'

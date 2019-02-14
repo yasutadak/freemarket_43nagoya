@@ -13,9 +13,10 @@
           %button#facebook-login.login-panel__sns-facebook
             = fa_icon "facebook-square"
             Facebookでログイン
-        %button#google-login.login-panel__sns-google{:type => ""}
-          = fa_icon "google-plus"
-          Googleでログイン
+        = link_to user_google_omniauth_authorize_path do
+          %button#google-login.login-panel__sns-google{:type => ""}
+            = fa_icon "google-plus"
+            Googleでログイン
       = form_for(resource, url: new_user_session_path) do |f|
         .login-panel__form-form-mail
           = f.text_field :email, placeholder: "メールアドレス", class: 'login-panel__form-form-mail-input'
