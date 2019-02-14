@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.order("id DESC").limit(3)
+    @products = Product.sort_new_id.limit(3)
   end
 
   def list
-    @products = Product.order("id DESC").page(params[:page]).per(12)
+    @products = Product.sort_new_id.page(params[:page]).per(12)
   end
 
   def new
@@ -21,14 +21,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @products = @product.seller.selling_products.where.not(id: @product.id).sort_new_id.limit(6)
+  end
+
   private
 
   def product_params
     params.require(:product).permit(:name, :status, :shipping_method, :shipping_burden, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: 1)
   end
 
-  def show
-    @product = Product.find(params[:id])
-    @products = Product.where(seller_id: @product.seller).where.not(id: @product.id).order("id DESC").limit(6)
-  end
+
 end

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :show]
 
   def edit
   end
@@ -10,6 +10,10 @@ class ProfilesController < ApplicationController
     else
       render action: :edit
     end
+  end
+
+  def show
+    @products = @user.selling_products.order("id DESC").page(params[:page]).per(6)
   end
 
   private

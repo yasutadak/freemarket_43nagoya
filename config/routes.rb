@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   end
 
   root 'products#index'
-  resources :users, only: [:show] do
-    resource :logout
-    resource :identification
-    resource :profile
+  resources :users, only: :show do
+    resource :logout, only: :show
+    resource :identification, only: [:edit, :update]
+    resource :profile, only: [:edit, :update, :show]
   end
   resources :products, only: [:index, :new, :show, :create] do
     collection do
