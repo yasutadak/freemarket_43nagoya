@@ -97,7 +97,7 @@ body {
           height: 300px;
           width: 100%;
           vertical-align: middle;
-          object-fit: contain;
+          object-fit: cover;
         }
       }
       &-bottom {
@@ -432,7 +432,7 @@ body {
             z-index: 1;
             width: 100%;
             vertical-align: middle;
-            object-fit: contain;
+            object-fit: cover;
           }
           .item-exhibitor__item-box-content--box-body {
             padding: 16px;
