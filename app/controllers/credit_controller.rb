@@ -18,6 +18,11 @@ class CreditController < Devise::RegistrationsController
       if resource.active_for_authentication?
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
+        Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+        Payjp::Customer.create(
+          id:   current_user.id,
+          card: params[:"payjp-token"],
+        )
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!
@@ -28,14 +33,12 @@ class CreditController < Devise::RegistrationsController
       set_minimum_password_length
       respond_with resource
     end
-
   end
-
 
 protected
 
-def total_sign_up_params(sign_up_params={})
+  def total_sign_up_params(sign_up_params={})
     session[:user] = session[:user].merge(sign_up_params)
-end
+  end
 
 end
