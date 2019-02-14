@@ -48,4 +48,44 @@ describe ProductsController do
       expect(assigns(:products)).not_to include product
     end
   end
+
+  describe 'GET #new' do
+    it 'renders the :new template' do
+      get :new
+    end
+  end
+
+  describe 'POST #create' do
+    context 'user loged-in and successfully saved' do
+      before do
+        login_user user
+      end
+
+      it 'saves the new product in the database' do
+        expect{post :create, params}.to change(Product, :count).by(1)
+      end
+
+      it 'redirects to products#index' do
+        post :create, params
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'user loged-in but missed saved' do
+      before do
+        login_user user
+      end
+
+      it 'unsave the new product in the database' do
+        expect{
+          post :create, params: { product: attributes_for(:product, image: nil) }
+        }.to change(Product, :count).by(0)
+      end
+
+      it 'render new_product_path' do
+        post :create, params
+        expect(response).to redirect_to new_product_path
+      end
+    end
+  end
 end

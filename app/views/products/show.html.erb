@@ -19,23 +19,23 @@
   <div class="item-container__main clearfix">
     <div class="item-container__main-photo">
       <div class="item-container__main-photo-main">
-        <%= image_tag("https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871") %>
+        <%= image_tag @product.image %>
       </div>
       <div class="item-container__main-photo-bottom">
         <div class="item-container__main-photo-bottom-ele">
-          <%= image_tag("https://mcdn.mercariapp.com/item/detail/orig/photos/m70692846747_1.jpg?1548561871") %>
+          <%= image_tag "" %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_2.jpg?1548561871") %>
+          <%= image_tag "" %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_3.jpg?1548561871") %>
+          <%= image_tag "" %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_4.jpg?1548561871") %>
+          <%= image_tag "" %>
         </div>
         <div class="item-container__main-photo-bottom-ele">
-          <%= image_tag("https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70692846747_5.jpg?1548561871") %>
+          <%= image_tag "" %>
         </div>
       </div>
     </div>
@@ -44,7 +44,9 @@
         <tr>
           <th>出品者</th>
           <td>
-            <%= link_to "#{@product.seller.nickname}", "" %>
+            <%= link_to user_profile_path(@product.seller) do %>
+              <%= @product.seller.nickname %>
+            <% end %>
             <div>
               <div class="item-container__main-table-rating">
                 <i class="fas fa-laugh item-container__main-table-rating-good"></i>
@@ -82,25 +84,27 @@
         </tr>
         <tr>
           <th>商品の状態</th>
-          <td><%= @product.status %></td>
+          <td><%= @product.status_i18n %></td>
         </tr>
         <tr>
           <th>発送料の負担</th>
-          <td><%= @product.shipping_burden %></td>
+          <td><%= @product.shipping_burden_i18n %></td>
         </tr>
         <tr>
           <th>配送の方法</th>
-          <td><%= @product.shipping_method %></td>
+          <td><%= @product.shipping_method_i18n %></td>
         </tr>
         <tr>
           <th>配送元地域</th>
           <td>
-            <%= link_to "#{@product.region}", "" %>
+            <%= link_to "" do %>
+              <%= @product.region %>
+            <% end %>
           </td>
         </tr>
         <tr>
           <th>発送日の目安</th>
-          <td><%= @product.shipping_timetable %></td>
+          <td><%= @product.shipping_timetable_i18n %></td>
         </tr>
       </tbody>
     </table>
@@ -109,7 +113,7 @@
     <span class="item-container__price-price"><%= price_format(@product.price) %></span>
     <span class="item-container__price-tax">(税込)</span>
     <span class="item-container__price-fee">
-      <%= @product.shipping_burden == "送料込み(出品者負担)" ? "送料込み" : "着払い" %>
+      <%= @product.shipping_burden_i18n == "送料込み(出品者負担)" ? "送料込み" : "着払い" %>
     </span>
   </div>
   <%= link_to "購入画面に進む", "", { class: "item-container__buy" } %>

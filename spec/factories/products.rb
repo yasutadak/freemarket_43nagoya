@@ -1,13 +1,13 @@
 FactoryGirl.define do
   factory :product do
     name               Faker::Pokemon.name
-    status             1
-    shipping_method    1
+    status             "new_item"
+    shipping_method    "merukari"
     region             Faker::Address.state
-    shipping_timetable 1
+    shipping_timetable "first_days"
     description        Faker::Lorem.sentence
-    price              1
-    shipping_burden    1
+    price              "3000"
+    shipping_burden    "exhibitor_burden"
     association :seller, factory: :user
   end
 end
