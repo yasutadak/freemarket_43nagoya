@@ -75,6 +75,7 @@ gem 'fog-aws'
 gem 'rails-i18n'
 gem 'jp_prefecture'
 gem 'kaminari', '~> 0.17.0'
+gem 'payjp'
 
 group :production do
   gem 'unicorn'
