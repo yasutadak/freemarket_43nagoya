@@ -25,6 +25,8 @@ class Product < ApplicationRecord
     Product.where("id > ?", self.id).order("id ASC").first
   end
 
+  scope :sort_new_id, -> { order("id DESC") }
+
   enum status: [
     "新品、未使用",
     "未使用に近い",

@@ -123,6 +123,12 @@ a {
       display: inline-block;
       line-height: 36px;
       font-size: 14px;
+      a.main-header__nav {
+        margin-left: 16px;
+        color: $gray;
+        line-height: 40px;
+        font-size: 14px;
+      }
       a.main-header__btn {
         background-color: $red;
         text-align: center;

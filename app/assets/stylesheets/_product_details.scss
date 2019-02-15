@@ -281,6 +281,7 @@ body {
   &__description {
     padding: 32px 0 0;
     p {
+      word-break: break-all;
       white-space: pre-wrap;
       font-size: 18px;
       color: #333;
@@ -465,6 +466,7 @@ body {
           .item-exhibitor__item-box-content--box-body {
             padding: 16px;
             height: 110px;
+            margin: 0;
             h3 {
               overflow: hidden;
               position: relative;
