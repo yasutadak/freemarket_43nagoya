@@ -1,4 +1,3 @@
-
 = render "/logo/header"
 .container
   %main.main
@@ -25,6 +24,8 @@
         - flash.each do |name, msg|
           - if name = alert
             = content_tag :div, msg, id: "flash_alert" if msg.is_a?(String)
+        = flash[:recaptcha_error]
+        = recaptcha_tags
         .login-panel__form-form-certification
           = f.submit 'ログイン', class: 'login-panel__form-form-submit'
       = link_to new_password_path(resource_name) do
