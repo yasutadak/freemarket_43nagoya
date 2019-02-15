@@ -28,37 +28,43 @@
       %h2 支払い方法
       = form_for resource, html: {class: 'main-section__form'}, url: credit_create_path do |f|
         .main-section__form-content.credit-card
-          .main-section__form-content-group
-            = f.label   :カード番号
-            %span 必須
-            = f.text_field :building, placeholder: "半角数字のみ" # まだクレジット機能の追加をしていないため、仮のカラム
-          .main-section__form-content-card
-            %ul
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2540802024", width: "49"
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2540802024", width: "34"
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2540802024", width: "30"
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2540802024", width: "32"
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2540802024", width: "21"
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2540802024", width: "32"
-              %li
-                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2540802024", width: "32"
-          .main-section__form-content-group
-            = f.label :有効期限
-            %span 必須
-            = f.select :building, {}, {}, class: "month-year"  # まだクレジット機能の追加をしていないため、仮のカラム
-            %i
-            = f.select :building, {}, {}, class: "month-year"  # まだクレジット機能の追加をしていないため、仮のカラム
-            %i
-          .main-section__form-content-group
-            = f.label :セキュリティーコード
-            %span 必須
-            = f.text_field :building, placeholder: "カード背面4桁もしくは3桁の番号"  # まだクレジット機能の追加をしていないため、仮のカラム
+          -# チェックアウト用
+          :plain
+            <form action="/pay" method="post">
+              <script src="https://checkout.pay.jp/" class="payjp-button" data-partial="true" data-key="pk_test_151a572b8d3fa7128c93f82a"></script>
+            </form>
+          -# カスタムフォーム用
+          -# .main-section__form-content-group
+          -#   = label_tag :カード番号
+          -#   %span 必須
+          -#   = text_field_tag "number", "", placeholder: "半角数字のみ", class: "number"
+          -# .main-section__form-content-card
+          -#   %ul
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2540802024", width: "49"
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2540802024", width: "34"
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2540802024", width: "30"
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2540802024", width: "32"
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2540802024", width: "21"
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2540802024", width: "32"
+          -#     %li
+          -#       = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2540802024", width: "32"
+          -# .main-section__form-content-group
+          -#   = label_tag :有効期限
+          -#   %span 必須
+          -#   = select_tag "exp_month", options_for_select(1..12), class: "month-year exp_month"
+          -#   %i
+          -#   = select_tag "exp_year", options_for_select((Time.now.year - 2000 )..(Time.now.year - 1990)), class: "month-year exp_year"
+          -#   %i
+          -# .main-section__form-content-group
+          -#   = label_tag :セキュリティーコード
+          -#   %span 必須
+          -#   = text_field_tag "cvc", "", placeholder: "カード背面4桁もしくは3桁の番号", class: "cvc"
           .main-section__form-content-group
           = f.submit '次へ進む', class: 'main-section__form-content-submit'
 
