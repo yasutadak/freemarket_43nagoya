@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+  before_action :set_product, only: [:edit]
   def index
     @products = Product.sort_new_id.limit(3)
   end
@@ -22,7 +23,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = find_product_id
   end
 
   def show
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :status, :shipping_method, :shipping_burden, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: current_user.id)
   end
 
-  def find_product_id
-    Product.find(params[:id])
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
