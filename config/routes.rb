@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:edit, :update, :show]
   end
 
-  resources :products, only: [:index, :new, :show, :edit, :update, :create] do
+  resources :products do
     collection do
       get 'list'
     end

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:edit]
+  before_action :set_product, only: [:edit, :update]
   def index
     @products = Product.sort_new_id.limit(3)
   end
@@ -31,7 +31,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = find_product_id
     @product.update(product_params)
     redirect_to product_path
   end
