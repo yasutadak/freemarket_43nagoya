@@ -22,6 +22,11 @@ body {
   border-top: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   background: #fff;
+  &__angle {
+    margin: 0 8px;
+    font-size: 12px;
+    color: #888;
+  }
   ul {
     width: 1020px;
     overflow: visible;
@@ -57,9 +62,14 @@ body {
     }
   }
 }
-
+#item-container {
+  padding: 0 40px 40px;
+  background: #fff;
+  margin: 0 auto 0;
+  width: 700px;
+}
 .item-container {
-  padding: 24px 40px 40px;
+  padding: 0 40px 40px;
   background: #fff;
   margin: 40px auto 0;
   width: 700px;
@@ -235,7 +245,7 @@ body {
     height: 60px;
     line-height: 60px;
     display: block;
-    margin: 16px 0 0;
+    margin: 0;
     background: #ea352d;
     color: #fff;
     line-height: 56px;
@@ -244,9 +254,34 @@ body {
     font-size: 24px;
     text-decoration: none;
   }
+  &__edit {
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    background: $red;
+    color: #fff;
+    text-align: center;
+    font-weight: solid;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  &__delete {
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    background: #aaa;
+    color: #fff;
+    text-align: center;
+    font-weight: solid;
+    font-size: 14px;
+    text-decoration: none;
+  }
   &__description {
     padding: 32px 0 0;
     p {
+      word-break: break-all;
       white-space: pre-wrap;
       font-size: 18px;
       color: #333;
@@ -293,16 +328,21 @@ body {
   margin: 24px auto 0;
   width: 700px;
   padding: 0;
+  &__angle {
+    font-size: 15px;
+  }
   &-prev {
     width: 45%;
     position: relative;
     word-wrap: break-word;
     float: left;
-    padding: 0 0 0 14px;
     list-style: none;
     a {
       color: #0099e8;
       text-decoration: none;
+      i {
+        margin-right: 4px;
+      }
     }
   }
   &-next {
@@ -310,12 +350,14 @@ body {
     position: relative;
     word-wrap: break-word;
     float: right;
-    padding: 0 14px 0 0;
     list-style: none;
     text-align: right;
     a {
       color: #0099e8;
       text-decoration: none;
+      i {
+        margin-left: 4px;
+      }
     }
   }
 }
@@ -350,7 +392,6 @@ body {
           font-weight: 400;
           font-variant: normal;
           text-transform: none;
-          line-height: 1;
         }
       }
     }
@@ -363,7 +404,12 @@ body {
   &-twetter {
     color: #fff;
     background: #5d9dc9;
-    font-size: 16px;
+    font-size: 18px;
+  }
+  &-line {
+    color: #fff;
+    background: #00c137;
+    font-size: 30px;
   }
   &-pinterest {
     color: #fff;
@@ -420,6 +466,7 @@ body {
           .item-exhibitor__item-box-content--box-body {
             padding: 16px;
             height: 110px;
+            margin: 0;
             h3 {
               overflow: hidden;
               position: relative;
