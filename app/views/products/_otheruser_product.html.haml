@@ -1,0 +1,113 @@
+#item-container
+  = link_to "購入画面に進む", "", { class: "item-container__buy" }
+  .item-container__description
+    %p= @product.description
+  .item-container__button.clearfix
+    .item-container__button-left
+      = link_to "", { class: "item-container__button-left-like" } do
+        %i
+        %span いいね！
+        %span{"data-num" => "like"} 仮
+      = link_to "", { class: "item-container__button-left-report" } do
+        %i
+        %span 不適切な商品の報告
+    .item-container__button-right
+      = link_to "" do
+        %i
+        %span あんしん・あんぜんへの取り組み
+    .item-container__description
+%ul.item-link.clearfix
+  %li.item-link-prev
+    - if @product.prev_id
+      = link_to product_path(@product.prev_id) do
+        %i.fas.fa-chevron-left.item-link__angle
+        = @product.prev_id.name
+  %li.item-link-next
+    - if @product.next_id
+      = link_to product_path(@product.next_id) do
+        = @product.next_id.name
+        %i.fas.fa-chevron-right.item-link__angle
+.item-social-media-box
+  %ul
+    %li
+      = link_to "" do
+        %i.fab.fa-facebook.item-social-media-box-facebook
+    %li
+      = link_to "" do
+        %i.fab.fa-twitter.item-social-media-box-twetter
+    %li
+      = link_to "" do
+        %i.fab.fa-line.item-social-media-box-line
+    %li
+      = link_to "" do
+        %i.fab.fa-pinterest.item-social-media-box-pinterest
+.item-exhibitor
+  %section.item-exhibitor__item-box
+    %h2
+      = link_to "#{@product.seller.nickname}さんのその他の出品"
+    .item-exhibitor__item-box-content.clearfix
+      = render @products
+    %section.item-exhibitor__item-box
+      %h2
+        = link_to "仮カテゴリー その他の商品", ""
+      .item-exhibitor__item-box-content.clearfix
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
+        %section.item-exhibitor__item-box-content--box
+          = link_to "" do
+            = image_tag("https://mcdn.mercariapp.com/thumb/photos/m41943918196_1.jpg?1548676169")
+            .item-exhibitor__item-box-content--box-body
+              %h3 モテアン 白赤
+              .item-exhibitor__item-box-content--box-body-bottom.clearfix
+                .item-exhibitor__item-box-content--box-body-bottom-price
+                  ¥ 28,000
+                .item-exhibitor__item-box-content--box-body-bottom-like
+                  %i
+                  %span 2
+                %p (税込)
