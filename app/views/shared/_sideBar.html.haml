@@ -1,0 +1,98 @@
+.myPage__sideBar
+  %ul.myPage__sideBar__myLists
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events.myPage__sideBar__myList--myPage
+      = link_to user_path(@user) do
+        マイページ
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        お知らせ
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        やることリスト
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        いいね！一覧
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        出品する
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        出品した商品-出品中
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        出品した商品-取引中
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        出品した商品-売却済み
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        購入した商品-取引中
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        購入した商品-過去の取引
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        ニュース一覧
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        評価一覧
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        ガイド
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__myList.myPage__sideBar__myList--events
+      = link_to "#" do
+        お問い合わせ
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+  %h3.myPage__sideBar__sales 売上・ポイント
+  %ul.myPage__sideBar__salesLists
+    %li.myPage__sideBar__salesList.myPage__sideBar__myList--events
+      = link_to "#" do
+        売上・振込申請
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__salesList.myPage__sideBar__myList--events
+      = link_to "#" do
+        ポイント
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+  %h3.myPage__sideBar__setting 設定
+  %ul.myPage__sideBar__settingLists
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events.myPage__sideBar__myList--profile
+      = link_to edit_user_profile_path(@user.id) do
+        プロフィール
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
+      = link_to "#" do
+        住所変更
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
+      = link_to "#" do
+        支払い方法
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
+      = link_to "#" do
+        メール/パスワード
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
+      = link_to edit_user_identification_path(@user.id) do
+        本人情報
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
+      = link_to "#" do
+        電話番号の確認
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")
+    %li.myPage__sideBar__settingList.myPage__sideBar__myList--events
+      = link_to user_logout_path(@user.id) do
+        ログアウト
+        = fa_icon("chevron-right",class: "chevron-right sideBar-icon")

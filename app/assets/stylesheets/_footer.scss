@@ -2,11 +2,13 @@
   height: 260px;
   width: 100%;
   position: relative;
-  background-color: #A0522D;
+  @include background_footer;
+
   &__box {
     margin: 0 auto;
     height: 260px;
     width: 750px;
+    position: relative;
   }
 }
 
@@ -47,8 +49,6 @@
   }
   img.banner__image {
     position: absolute;
-    top: 0;
-    right: 345px;
     bottom: 0;
     width: 300px;
     height: 100%;
@@ -60,7 +60,6 @@ ul {
 }
 
 .footer {
-  height: 500px;
   width: 100%;
   background-color: #212121;
   text-align: center;
@@ -98,16 +97,13 @@ img.country {
   height: 20px;
 }
 
-img.footer__logo__img {
-  position: relative;
-  top: 450px;
-  right: 630px;
+a.footer__logo {
+  display: block;
+  margin: 40px 0 0;
+  text-align: center;
 }
 
 p.footer__copyright {
-  position: relative;
-  top: 450px;
-  right: 630px;
   color: #fff;
   font-size: 12px;
 }

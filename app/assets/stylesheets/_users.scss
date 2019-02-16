@@ -2,7 +2,6 @@
   margin:0 auto 0 ;
   width: 1020px;
   padding-bottom:40px;
-  height: 1292px;
   padding-top: 40px;
 
 //sideBar
@@ -22,12 +21,19 @@
     &__myList{
       border:solid 1px #EEE;
       line-height: 1.5;
-      padding: 15px;
       font-size:12px;
       color: #333;
       background-color: #fff;
       & + &{
         border-top:none;
+      }
+      a {
+        color: #333;
+        display: block;
+        padding: 15px;
+        &:visited {
+          color: #333;
+        }
       }
     }
     &__sales{
@@ -44,13 +50,20 @@
     &__salesList{
       border:solid 1px #EEE;
       line-height: 1.5;
-      padding: 15px;
       font-size:12px;
       color: #333;
       background-color: #fff;
 
       & + &{
         border-top:none;
+      }
+      a {
+        color: #333;
+        display: block;
+        padding: 15px;
+        &:visited {
+          color: #333;
+        }
       }
     }
     &__setting{
@@ -67,11 +80,16 @@
     &__settingList{
       border:solid 1px #EEE;
       line-height: 1.5;
-      padding: 15px;
       font-size:12px;
-      color: #333;
       background-color: #fff;
-
+      a {
+        color: #333;
+        display: block;
+        padding: 15px;
+        &:visited {
+          color: #333;
+        }
+      }
       & + &{
         border-top:none;
       }
@@ -86,9 +104,15 @@
 
   &__top__header{
     height: 200px;
-    background-color: gray;
+    @include background_profile;
     text-align: center;
-
+    a {
+      color: #333;
+      display: block;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
     &__userImage{
       width: 60px;
       height: 60px;
@@ -247,6 +271,16 @@
         line-height: 48px;
         height: 48px;
         background-color:#ea352d;
+        &:hover {
+          opacity: 0.9;
+        }
+        a {
+          color: #fff;
+          display: block;
+          &:visited {
+            color: #fff;
+          }
+        }
       }
     }
   }
@@ -268,9 +302,9 @@
   }
   &__header{
     padding: 72px 16px 24px;
-    background-color: gray;
+    @include background_profile;
+    // background-color: gray;
     text-align: center;
-
     &__userImage{
       display: inline-block;
       overflow: hidden;
@@ -279,6 +313,18 @@
       border-radius: 50%;
       vertical-align: middle;
       background-color: white;
+    }
+    input {
+      width: 220px;
+      margin: 0 0 0 8px;
+      vertical-align: middle;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
     }
     &__userName{
       width: 180px;
@@ -291,6 +337,24 @@
       background: #fff;
       line-height: 1.5;
       font-size: 16px;
+    }
+    p {
+      margin: 8px 0 0;
+      color: #ea352d;
+    }
+    .field_with_errors {
+      input {
+        width: 220px;
+        margin: 0 0 0 8px;
+        vertical-align: middle;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ea352d;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
     }
   }
   &__content{
