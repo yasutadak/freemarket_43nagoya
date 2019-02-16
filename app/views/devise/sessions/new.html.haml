@@ -1,21 +1,20 @@
-
 = render "/logo/header"
 .container
   %main.main
     .login-panel
       .login-panel__no-account
-        / 新規会員登録
         %p アカウントをお持ちでない方はこちら
         = link_to "新規会員登録", new_user_registration_path
       .login-panel__sns
-        / Facebookでログイン、グーグルでログイン
         = link_to user_facebook_omniauth_authorize_path do
           %button#facebook-login.login-panel__sns-facebook
             = fa_icon "facebook-square"
             Facebookでログイン
-        %button#google-login.login-panel__sns-google{:type => ""}
-          = fa_icon "google"
-          Googleでログイン
+
+        = link_to user_google_omniauth_authorize_path do
+          %button#google-login.login-panel__sns-google{:type => ""}
+            = fa_icon "google-plus"
+            Googleでログイン
       .login-panel__mail
         = form_for(resource, url: new_user_session_path) do |f|
           .login-panel__form-form-mail
@@ -25,9 +24,10 @@
           - flash.each do |name, msg|
             - if name = alert
               = content_tag :div, msg, id: "flash_alert" if msg.is_a?(String)
+          = flash[:recaptcha_error]
+          = recaptcha_tags
           .login-panel__form-form-certification
             = f.submit 'ログイン', class: 'login-panel__form-form-submit'
         = link_to new_password_path(resource_name) do
           .login-panel__form-form-forgot パスワードをお忘れの方
-
   = render "/logo/footer"

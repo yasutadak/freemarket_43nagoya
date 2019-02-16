@@ -25,6 +25,7 @@
     }
   }
 }
+
 .main__section__inner__form__group__subCategory__hidden {
   display: none;
   float:left;
@@ -32,6 +33,7 @@
   color: #333;
   font-size: 14px;
 }
+
 .main__section__inner__form__group__subCategory__attention__hidden {
   display: none;
   float: right;
@@ -42,12 +44,15 @@
   border-radius: 2px;
   font-size: 12px;
 }
+
 .selectmethod-1 {
   display: none;
 }
+
 .selectmethod-2 {
   display: none;
 }
+
 .main {
   display: block;
   &__section {
@@ -207,6 +212,7 @@
       }
     }
 }
+
 .footer-gray {
   width: 456px;
   height: 220px;
@@ -284,9 +290,11 @@ select{
   color: red;
   padding: 10px 0 0 0;
 }
+
 #hidden {
   display: none;
 }
+
 .error_msg_price {
   color: red;
   padding: 10px 0px 0 0px;

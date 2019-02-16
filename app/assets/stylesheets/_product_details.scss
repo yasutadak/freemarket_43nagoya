@@ -44,8 +44,15 @@
   }
 }
 
+#item-container {
+  padding: 0 40px 40px;
+  background: #fff;
+  margin: 0 auto 0;
+  width: 700px;
+}
+
 .item-container {
-  padding: 24px 40px 40px;
+  padding: 0 40px 40px;
   background: #fff;
   margin: 40px auto 0;
   width: 700px;
@@ -145,6 +152,30 @@
     }
     display: block;
     @include button_buy;
+  }
+  &__edit {
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    background: $red;
+    color: #fff;
+    text-align: center;
+    font-weight: solid;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  &__delete {
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    margin: 0;
+    background: #aaa;
+    color: #fff;
+    text-align: center;
+    font-weight: solid;
+    font-size: 14px;
+    text-decoration: none;
   }
   &__description {
     padding: 32px 0 0;

@@ -76,10 +76,13 @@ gem 'fog-aws'
 gem 'dropzonejs-rails'
 gem 'rails-i18n'
 gem 'kaminari', '~> 0.17.0'
+gem 'payjp'
 gem 'enum_help'
 gem 'jp_prefecture'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "recaptcha", require: "recaptcha/rails"
 
 group :production do
   gem 'unicorn'
