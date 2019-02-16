@@ -40,73 +40,7 @@
       </div>
     </div>
     <table class="item-container__main-table">
-      <tbody>
-        <tr>
-          <th>出品者</th>
-          <td>
-            <%= link_to user_profile_path(@product.seller) do %>
-              <%= @product.seller.nickname %>
-            <% end %>
-            <div>
-              <div class="item-container__main-table-rating">
-                <i class="fas fa-laugh item-container__main-table-rating-good"></i>
-                <span>0</span>
-              </div>
-              <div class="item-container__main-table-rating">
-                <i class="fas fa-meh item-container__main-table-rating-normal"></i>
-                <span>0</span>
-              </div>
-              <div class="item-container__main-table-rating">
-                <i class="fas fa-frown item-container__main-table-rating-bad"></i>
-                <span>0</span>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>カテゴリー</th>
-          <td class="item-container__main-table-category">
-            <%= link_to "" do %>
-              <div>
-                仮カテゴリー
-              </div>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th>ブランド</th>
-          <td>
-            <%= link_to "" do %>
-              <div>
-              </div>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th>商品の状態</th>
-          <td><%= @product.status_i18n %></td>
-        </tr>
-        <tr>
-          <th>発送料の負担</th>
-          <td><%= @product.shipping_burden_i18n %></td>
-        </tr>
-        <tr>
-          <th>配送の方法</th>
-          <td><%= @product.shipping_method_i18n %></td>
-        </tr>
-        <tr>
-          <th>配送元地域</th>
-          <td>
-            <%= link_to "" do %>
-              <%= @product.region %>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th>発送日の目安</th>
-          <td><%= @product.shipping_timetable_i18n %></td>
-        </tr>
-      </tbody>
+      <%= render "product_table" %>
     </table>
   </div>
   <div class="item-container__price">
@@ -117,9 +51,20 @@
     </span>
   </div>
   <%= link_to "購入画面に進む", "", { class: "item-container__buy" } %>
+  <table class="item-container__main-table_sm">
+    <%= render "product_table" %>
+  </table>
   <div class="item-container__description">
     <p><%= @product.description %></p>
   </div>
+  <div class="item-container__price_sm">
+    <span class="item-container__price-price"><%= price_format(@product.price) %></span>
+    <span class="item-container__price-tax">(税込)</span>
+    <span class="item-container__price-fee">
+      <%= @product.shipping_burden == "exhibitor_burden" ? "送料込み" : "着払い" %>
+    </span>
+  </div>
+  <%= link_to "購入画面に進む", "", { class: "item-container__buy_sm" } %>
   <div class="item-container__button clearfix">
     <div class="item-container__button-left">
       <%= link_to "", { class: "item-container__button-left-like" } do %>

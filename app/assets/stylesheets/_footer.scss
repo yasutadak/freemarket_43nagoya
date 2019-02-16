@@ -1,4 +1,7 @@
 .banner {
+  @include max-screen($sm) {
+    display: none;
+  }
   height: 260px;
   width: 100%;
   position: relative;
@@ -63,16 +66,52 @@ ul {
   width: 100%;
   background-color: #212121;
   text-align: center;
+  @include max-screen($lg) {
+    padding: 40px 20px;
+  }
   padding: 60px 0;
+  @include max-screen($md) {
+    padding: 40px 20px;
+  }
+  @include max-screen($sm) {
+    padding: 40px 20px;
+  }
   &__box {
     width: 1020px;
     margin: 0 auto;
+    @include max-screen($md) {
+      width: 100%;
+    }
+  }
+}
+
+li.footer-download-app {
+  display: none;
+  @include max-screen($sm) {
+    display: block;
+    text-align: center;
+    a {
+      display: block;
+      color: #fff;
+      img {
+        margin: 0 8px 0 0;
+        vertical-align: middle;
+        width: 35px;
+      }
+    }
   }
 }
 
 li.footer-cell {
   float: left;
-  width: 236px;
+  width: 23%;
+  margin-right: 2%;
+  @include max-screen($lg) {
+    margin: 40px auto 0;
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
   h3 {
     font-size: 15px;
     font-weight: bold;
@@ -120,7 +159,7 @@ p.footer__copyright {
   background-color: #ea352d;
   color: #fff;
   text-align: center;
-  .sell-btn__title {
+  &__title {
     margin: 30px 0 0 0;
   }
   .fa-camera {
@@ -128,5 +167,25 @@ p.footer__copyright {
     font-size: 54px;
     margin: 8px 0 0;
     font-family: 'Fontawesome';
+  }
+  @include max-screen($sm) {
+    position: fixed;
+    bottom: -14px;
+    right: -14px;
+    z-index: 1000;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ea352d;
+    color: #fff;
+    text-align: center;
+    &__title {
+      margin: 14px 0 0;
+      font-size: 14px;
+    }
+    .fa-camera {
+      margin: 4px 0 0;
+      font-size: 24px;
+    }
   }
 }

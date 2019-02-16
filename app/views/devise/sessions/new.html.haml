@@ -14,19 +14,20 @@
             = fa_icon "facebook-square"
             Facebookでログイン
         %button#google-login.login-panel__sns-google{:type => ""}
-          = fa_icon "google-plus"
+          = fa_icon "google"
           Googleでログイン
-      = form_for(resource, url: new_user_session_path) do |f|
-        .login-panel__form-form-mail
-          = f.text_field :email, placeholder: "メールアドレス", class: 'login-panel__form-form-mail-input'
-        .login-panel__form-form-password
-          = f.password_field :password, placeholder: "パスワード", class: 'login-panel__form-form-password-input'
-        - flash.each do |name, msg|
-          - if name = alert
-            = content_tag :div, msg, id: "flash_alert" if msg.is_a?(String)
-        .login-panel__form-form-certification
-          = f.submit 'ログイン', class: 'login-panel__form-form-submit'
-      = link_to new_password_path(resource_name) do
-        .login-panel__form-form-forgot パスワードをお忘れの方
+      .login-panel__mail
+        = form_for(resource, url: new_user_session_path) do |f|
+          .login-panel__form-form-mail
+            = f.text_field :email, placeholder: "メールアドレス", class: 'login-panel__form-form-mail-input'
+          .login-panel__form-form-password
+            = f.password_field :password, placeholder: "パスワード", class: 'login-panel__form-form-password-input'
+          - flash.each do |name, msg|
+            - if name = alert
+              = content_tag :div, msg, id: "flash_alert" if msg.is_a?(String)
+          .login-panel__form-form-certification
+            = f.submit 'ログイン', class: 'login-panel__form-form-submit'
+        = link_to new_password_path(resource_name) do
+          .login-panel__form-form-forgot パスワードをお忘れの方
 
   = render "/logo/footer"
