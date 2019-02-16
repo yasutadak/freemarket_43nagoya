@@ -78,7 +78,7 @@ gem 'kaminari', '~> 0.17.0'
 gem 'payjp'
 gem 'enum_help'
 gem 'jp_prefecture'
-gem 'omniauth'
+gem 'omniauth', '~> 1.0.0'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "recaptcha", require: "recaptcha/rails"
