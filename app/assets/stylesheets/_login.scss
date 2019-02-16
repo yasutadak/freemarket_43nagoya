@@ -216,10 +216,17 @@ body {
       }
     }
   }
-
 }
 
 #flash_alert{
   color:red;
   margin-top:10px;
+}
+
+.g-recaptcha {
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center;
+  width:300px;
+  margin-top:20px;
 }
