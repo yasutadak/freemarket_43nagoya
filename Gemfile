@@ -81,6 +81,7 @@ gem 'jp_prefecture'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem "recaptcha", require: "recaptcha/rails"
 
 group :production do
   gem 'unicorn'

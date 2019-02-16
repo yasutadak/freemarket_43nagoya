@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+  before_action :set_product, only: [:edit, :update]
   def index
     @products = Product.sort_new_id.limit(3)
   end
@@ -21,16 +22,26 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def show
     @product = Product.find(params[:id])
     @products = @product.seller.selling_products.where.not(id: @product.id).sort_new_id.limit(6)
   end
 
+  def update
+    @product.update(product_params)
+    redirect_to product_path
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:name, :status, :shipping_method, :shipping_burden, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: 1)
+    params.require(:product).permit(:name, :status, :shipping_method, :shipping_burden, :region, :shipping_timetable, :price, :description, :image, :image_cache).merge(seller_id: current_user.id)
   end
 
-
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end

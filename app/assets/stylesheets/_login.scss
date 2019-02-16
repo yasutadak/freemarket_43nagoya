@@ -179,47 +179,56 @@ body {
       }
     }
   }
-  .footer {
-    width: 456px;
-    height: 220px;
-    margin: 0 auto;
-    padding: 40px 0;
-    text-align: center;
-    background: #f5f5f5;
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      li {
-        display: inline-block;
-        margin: 0 0 0 16px;
-        font-size: 12px;
-        a {
-          display: block;
-          color: #333;
-          text-decoration: none;
-        }
-      }
-    }
-    &-icon {
-      display: block;
-      color: #333;
-      width: 80px;
-      height: 65px;
-      margin: 40px auto 0;
-      text-decoration: none;
-    }
-    p {
-      margin: 8px 0 0;
-      small {
-        font-size: 12px;
+}
+
+#footer {
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  background: #f5f5f5;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      margin: 0 0 0 16px;
+      font-size: 12px;
+      a {
+        display: block;
+        color: #333;
+        text-decoration: none;
       }
     }
   }
-
+  &-icon {
+    display: block;
+    color: #333;
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    text-decoration: none;
+  }
+  p {
+    margin: 8px 0 0;
+    small {
+      font-size: 12px;
+    }
+  }
 }
+
 
 #flash_alert{
   color:red;
   margin-top:10px;
+}
+
+.g-recaptcha {
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center;
+  width:300px;
+  margin-top:20px;
 }
