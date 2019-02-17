@@ -3,6 +3,7 @@
     .myPage__content__top__header
       =link_to user_profile_path(@user) do
         .myPage__content__top__header__userImage
+          = image_tag @user.image if @user.image
         .myPage__content__top__header__userName
           = @user.nickname
         .myPage__content__top__header__userEvaluate 評価 0

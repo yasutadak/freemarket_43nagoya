@@ -44,7 +44,7 @@ GEM
     bcrypt (3.1.12)
     bindex (0.5.0)
     builder (3.2.3)
-    byebug (10.0.2)
+    byebug (11.0.0)
     capistrano (3.11.0)
       airbrussh (>= 1.0.0)
       i18n
@@ -80,6 +80,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (1.0.0)
+      devise (> 3.5.2, < 4.6)
+      rails (>= 4.2.0, < 6)
     diff-lcs (1.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
@@ -97,7 +100,7 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
-    faker (1.9.1)
+    faker (1.9.3)
       i18n (>= 0.7)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
@@ -123,6 +126,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -208,7 +213,7 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    pry-rails (0.3.8)
+    pry-rails (0.3.9)
       pry (>= 0.10.4)
     puma (3.12.0)
     rack (2.0.6)
@@ -301,7 +306,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.18.0)
+    sshkit (1.18.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.8.0)
@@ -345,6 +350,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  devise_token_auth
   dropzonejs-rails
   enum_help
   erb2haml
@@ -352,6 +358,7 @@ DEPENDENCIES
   faker
   fog-aws
   font-awesome-rails
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jp_prefecture

@@ -1,7 +1,9 @@
 = render "/shared/header"
+- breadcrumb :profiles
+= render "./bread_crumb"
 
 .myPage.clearfix
-  = render "/shared/sideBar"
   = render "profile"
+  = render "/shared/sideBar"
 
 = render "/shared/footer"
