@@ -12,6 +12,11 @@ crumb :profiles do
   link "プロフィール", edit_user_profile_path
   parent :users
 end
+# profiles#show
+crumb :profiles_show do |user|
+  link user.nickname, user_profile_path
+  parent :root
+end
 # identifications#edit
 crumb :identifications do
   link "本人情報の登録", edit_user_identification_path
