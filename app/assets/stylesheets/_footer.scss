@@ -93,6 +93,10 @@ li.footer-download-app {
     a {
       display: block;
       color: #fff;
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
       img {
         margin: 0 8px 0 0;
         vertical-align: middle;
@@ -105,7 +109,7 @@ li.footer-download-app {
 li.footer-cell {
   float: left;
   width: 23%;
-  margin-right: 2%;
+  margin: 16px 0 0;
   @include max-screen($lg) {
     margin: 40px auto 0;
     display: block;
@@ -129,7 +133,13 @@ li.footer-cell {
 }
 
 a.link {
+  font-size: 14px;
   color: #fff;
+  display: block;
+  &:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
 }
 
 img.country {
