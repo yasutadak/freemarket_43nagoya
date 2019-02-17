@@ -150,10 +150,26 @@ a {
       display: none;
     }
     li {
+      position: relative;
       display: inline-block;
-      line-height: 36px;
-      font-size: 14px;
-      a.main-header__btn {
+      padding: 0 0 0 8px;
+      vertical-align: middle;
+      a.main-header__mypage{
+        display: block;
+        font-size: 14px;
+        color: #333;
+        line-height: 40px;
+      }
+      a.main-header__nav{
+        display: block;
+        font-size: 14px;
+        color: #333;
+        line-height: 40px;
+        @include max-screen($sm) {
+          display: none;
+        }
+      }
+      a.main-header__btn{
         background-color: $red;
         text-align: center;
         padding: 7px;
@@ -205,3 +221,4 @@ nav.right-box--xs {
     }
   }
 }
+

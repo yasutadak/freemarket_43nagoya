@@ -21,11 +21,12 @@
             = f.text_field :email, placeholder: "メールアドレス", class: 'login-panel__form-form-mail-input'
           .login-panel__form-form-password
             = f.password_field :password, placeholder: "パスワード", class: 'login-panel__form-form-password-input'
-          - flash.each do |name, msg|
-            - if name = alert
-              = content_tag :div, msg, id: "flash_alert" if msg.is_a?(String)
-          = flash[:recaptcha_error]
-          = recaptcha_tags
+          .login-panel__form-form-recaptcha
+            - flash.each do |name, msg|
+              - if name = alert
+                = content_tag :div, msg, id: "flash_alert" if msg.is_a?(String)
+            = flash[:recaptcha_error]
+            = recaptcha_tags
           .login-panel__form-form-certification
             = f.submit 'ログイン', class: 'login-panel__form-form-submit'
         = link_to new_password_path(resource_name) do

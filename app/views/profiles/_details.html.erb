@@ -4,7 +4,7 @@
       <%= link_to "" do %>
         <div class="profile-container-box-center-icon">
           <div class="profile-container-box-center-icon-image">
-
+            <%= image_tag @user.image if @user.image %>
           </div>
           <h2><%= @user.nickname %></h2>
         </div>
@@ -61,6 +61,7 @@
       </li>
     </ul>
   </div>
+</section>
 <div class="item-exhibitor">
   <section class="item-exhibitor__item-box">
     <h2 class="exhibitor_products">

@@ -7,9 +7,9 @@
       %nav.right-box--xs
         %ul.header-nav
           %li
-            = link_to "ログイン", user_session_path, class: "main-header__btn"
+            = link_to "ログイン", user_session_path, class: "main-header__btn" unless user_signed_in?
           %li
-            = link_to "新規会員", new_user_registration_path, class: "main-header__signup"
+            = link_to "新規会員", new_user_registration_path, class: "main-header__signup" unless user_signed_in?
       %form.search-box
         %input.search-form{type: "search", name: "keyword", placeholder: "キーワードから探す"}
         / = form_for [] do |f|
@@ -69,7 +69,7 @@
       %nav.right-box
         %ul.header-nav
           %li
-            = link_to "マイページ", user_path(current_user.id), class: "main-header__nav" if user_signed_in?
+            = link_to "マイページ", user_path(current_user.id), class: "main-header__mypage" if user_signed_in?
           %li
             = link_to "お知らせ", "#", class: "main-header__nav" if user_signed_in?
           %li
