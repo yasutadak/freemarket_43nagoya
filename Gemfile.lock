@@ -74,12 +74,15 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
-    devise (4.6.1)
+    devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (1.0.0)
+      devise (> 3.5.2, < 4.6)
+      rails (>= 4.2.0, < 6)
     diff-lcs (1.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
@@ -345,6 +348,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  devise_token_auth
   dropzonejs-rails
   enum_help
   erb2haml
