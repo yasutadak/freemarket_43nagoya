@@ -25,40 +25,36 @@
   font-weight: bold;
   text-align: center;
   padding-top: 50px;
+  &__text {
+    text-align: center;
+    margin: 10px 0 122px 0;
+    font-size: 15px;
+  }
+  &__btn {
+    height: 53px;
+    width: 50%;
+    float: left;
+    border-style: solid none none solid;
+    border-width: 1px;
+    border-color: $lightGray;
+    &__confirm {
+      line-height: 53px;
+      margin: 0 70px;
+      color: black;
+    }
+  }
 }
 
-.delete-text {
-  text-align: center;
-  margin: 10px 0 122px 0;
-  font-size: 15px;
-}
-
-.cancel-btn {
+.cancel__btn {
   height: 53px;
   width: 50%;
   float: left;
   border-style: solid none none none;
   border-width: 1px;
   border-color: $lightGray;
-}
-
-.back-show {
-  line-height: 53px;
-  margin: 0 90px;
-  color: black;
-}
-
-.delete-btn {
-  height: 53px;
-  width: 50%;
-  float: left;
-  border-style: solid none none solid;
-  border-width: 1px;
-  border-color: $lightGray;
-}
-
-.back-delete {
-  line-height: 53px;
-  margin: 0 70px;
-  color: black;
+  &__back {
+    line-height: 53px;
+    margin: 0 90px;
+    color: black;
+  }
 }

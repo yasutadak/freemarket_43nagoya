@@ -11,12 +11,12 @@
   #modalwin.modalwin-hide
     %h1.delete
       確認
-    %p.delete-text
+    %p.delete__text
       削除すると二度と復活できません。
       %br
       %br
       本当に削除しますか？
-    .cancel-btn
-      = link_to "キャンセル", product_path, {class: "back-show"}
-    .delete-btn
-      = link_to "削除する", product_path(params[:id]), class: "back-delete", method: :delete
+    .cancel__btn
+      = link_to "キャンセル", product_path, {class: "cancel__btn__back"}
+    .delete__btn
+      = link_to "削除する", product_path(params[:id]), class: "delete__btn__confirm", method: :delete

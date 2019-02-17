@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
     $('#modalwin').fadeIn();
   });
 
-  $('.cancel-btn').on('click', function() {
+  $('.cancel__btn').on('click', function() {
     $('.overlay').fadeOut();
     $('#modalwin').fadeOut();
   });
