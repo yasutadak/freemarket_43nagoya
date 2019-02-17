@@ -159,12 +159,18 @@ a {
         font-size: 14px;
         color: #333;
         line-height: 40px;
+        &:hover {
+          color: $lightBlue;
+        }
       }
       a.main-header__nav{
         display: block;
         font-size: 14px;
         color: #333;
         line-height: 40px;
+        &:hover {
+          color: $lightBlue;
+        }
         @include max-screen($sm) {
           display: none;
         }
