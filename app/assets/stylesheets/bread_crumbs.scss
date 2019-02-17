@@ -1,0 +1,18 @@
+.header-bread-crumbs {
+  position: relative;
+  border-top: 1px solid #eee;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+
+  .breadcrumbs {
+    overflow: visible;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 17px 0 16px;
+    white-space: normal;
+  }
+  .current{
+    font-weight: bold;
+  }
+}

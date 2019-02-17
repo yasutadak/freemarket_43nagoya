@@ -68,7 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
-gem 'font-awesome-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
@@ -83,6 +82,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'gretel'
 gem 'devise_token_auth'
 
 group :production do
