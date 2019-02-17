@@ -1,26 +1,10 @@
-* {
-    box-sizing: border-box;
-}
-
-.clearfix::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-
-body {
-  min-height: 100%;
-  background: rgb(245, 245, 245);
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  font-size: 14px;
-  color: rgb(51, 51, 51);
-  line-height: 1;
-}
-
 .profile-container {
   background: #fff;
   margin: 40px auto 0;
   width: 700px;
+  @include max-screen($sm) {
+    width: 100%;
+  }
   &-box {
     @include background_profile;
     background-size: cover;
@@ -40,6 +24,10 @@ body {
           background-size: cover;
           border-radius: 50%;
           margin: 0 auto;
+          @include max-screen($sm) {
+            width: 90px;
+            height: 90px;
+          }
         }
         h2 {
           margin: 8px 0 16px;
