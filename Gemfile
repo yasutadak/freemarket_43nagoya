@@ -83,6 +83,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'gretel'
+gem 'devise_token_auth'
 
 group :production do
   gem 'unicorn'

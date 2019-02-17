@@ -17,7 +17,11 @@
 
 .footer
   .footer__box.clearfix
-    %ul
+    %ul.clearfix
+      %li.footer-download-app
+        = link_to "" do
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2818705848"
+          今すぐ無料ダウンロード！
       %li.footer-cell
         %h3
           メルカリについて
@@ -55,7 +59,7 @@
           %li.list
             %a.link{href: ""}
               採用情報
-    %ul
+
       %li.footer-cell
         %h3
           メルカリを見る
@@ -78,7 +82,7 @@
           %li.list
             %a.link{href: ""}
               公式Facebook
-    %ul
+
       %li.footer-cell
         %h3
           ヘルプ＆ガイド
@@ -116,7 +120,7 @@
           %li.list
             %a.link{href: ""}
               メルカリボックス
-    %ul
+
       %li.footer-cell
         %h3
           国

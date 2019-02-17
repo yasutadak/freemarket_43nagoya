@@ -10,63 +10,22 @@
         = image_tag(@product.image)
       .item-container__main-photo-bottom
         .item-container__main-photo-bottom-ele
-          = image_tag(@product.image)
+          = image_tag("")
         .item-container__main-photo-bottom-ele
-          = image_tag(@product.image)
+          = image_tag("")
         .item-container__main-photo-bottom-ele
-          = image_tag(@product.image)
+          = image_tag("")
         .item-container__main-photo-bottom-ele
-          = image_tag(@product.image)
+          = image_tag("")
         .item-container__main-photo-bottom-ele
-          = image_tag(@product.image)
+          = image_tag("")
     %table.item-container__main-table
-      %tbody
-        %tr
-          %th 出品者
-          %td
-            = link_to "#{@product.seller.nickname}", ""
-            %div
-              .item-container__main-table-rating
-                %i.fas.fa-laugh.item-container__main-table-rating-good
-                %span 0
-              .item-container__main-table-rating
-                %i.fas.fa-meh.item-container__main-table-rating-normal
-                %span 0
-              .item-container__main-table-rating
-                %i.fas.fa-frown.item-container__main-table-rating-bad
-                %span 0
-        %tr
-          %th カテゴリー
-          %td.item-container__main-table-category
-            = link_to "" do
-              %div
-                仮カテゴリー
-        %tr
-          %th ブランド
-          %td
-            = link_to "" do
-              %div
-        %tr
-          %th 商品の状態
-          %td= @product.status
-        %tr
-          %th 発送料の負担
-          %td= @product.shipping_burden
-        %tr
-          %th 配送の方法
-          %td= @product.shipping_method
-        %tr
-          %th 配送元地域
-          %td
-            = link_to "#{@product.region}", ""
-        %tr
-          %th 発送日の目安
-          %td= @product.shipping_timetable
+      = render "product_table"
   .item-container__price
     %span.item-container__price-price= price_format(@product.price)
     %span.item-container__price-tax (税込)
     %span.item-container__price-fee
-      = @product.shipping_burden == "送料込み(出品者負担)" ? "送料込み" : "着払い"
+      = @product.shipping_burden == "送料込み（出品者負担）" ? "送料込み" : "着払い"
 - if current_user.id == @product.seller_id
   = render "my_product"
 - else
