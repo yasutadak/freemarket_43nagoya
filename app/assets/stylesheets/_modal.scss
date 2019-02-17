@@ -27,8 +27,13 @@
   padding-top: 50px;
   &__text {
     text-align: center;
-    margin: 10px 0 122px 0;
+    margin: 10px 0 20px 0;
     font-size: 15px;
+    &__confirm {
+      text-align: center;
+      font-size: 15px;
+      padding-bottom: 117px;
+    }
   }
   &__btn {
     height: 53px;
