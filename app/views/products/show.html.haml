@@ -1,4 +1,7 @@
 = render "/shared/header"
+- breadcrumb :product,@product
+= render "./bread_crumb"
+
 %section.item-container
   %h1= @product.name
   .item-container__main.clearfix
