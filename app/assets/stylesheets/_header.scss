@@ -157,7 +157,8 @@ a {
       display: inline-block;
       padding: 0 0 0 8px;
       vertical-align: middle;
-      a.main-header__mypage{
+
+      a.main-header__mypage {
         display: block;
         font-size: 14px;
         color: #333;
@@ -165,8 +166,32 @@ a {
         &:hover {
           color: $lightBlue;
         }
+        .right-box-avatar {
+          background: gray;
+          border-radius: 50%;
+          display: inline-block;
+          position: relative;
+          width: 32px;
+          height: 32px;
+          margin: 0 auto;
+          vertical-align: middle;
+          img {
+            border-radius: 50%;
+            max-width: 32px;
+            height: 32px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+        .right-box-mypage {
+          display: inline-block;
+          margin: 0 0 0 8px;
+          font-size: 14px;
+          vertical-align: middle;
+        }
       }
-      a.main-header__nav{
+      a.main-header__nav {
         display: block;
         font-size: 14px;
         color: #333;
@@ -177,8 +202,25 @@ a {
         @include max-screen($sm) {
           display: none;
         }
+        i.far.fa-bell {
+          font-size: 17px;
+          display: inline-block;
+          speak: none;
+          font-style: normal;
+          font-weight: 400;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          vertical-align: middle;
+        }
+        .right-box-mypage {
+          display: inline-block;
+          margin: 0 0 0 8px;
+          font-size: 14px;
+          vertical-align: middle;
+        }
       }
-      a.main-header__btn{
+      a.main-header__btn {
         line-height: 40px;
         background-color: $red;
         text-align: center;
