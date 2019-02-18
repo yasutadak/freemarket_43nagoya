@@ -52,7 +52,8 @@
 .item-exhibitor
   %section.item-exhibitor__item-box
     %h2
-      = link_to "#{@product.seller.nickname}さんのその他の出品"
+      = link_to user_profile_path(@product.seller) do
+        = "#{@product.seller.nickname}さんのその他の出品"
     .item-exhibitor__item-box-content.clearfix
       = render @products
     %section.item-exhibitor__item-box
