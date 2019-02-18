@@ -147,6 +147,14 @@
       margin: 0 auto;
       position: relative;
       top:30px;
+      img {
+        border-radius: 50%;
+        max-width: 60px;
+        height: 60px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
     &__userName{
       margin:35px 0 10px 0;
@@ -327,6 +335,14 @@
       border-radius: 50%;
       vertical-align: middle;
       background-color: white;
+      img {
+        border-radius: 50%;
+        max-width: 60px;
+        height: 60px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
     input {
       width: 220px;
