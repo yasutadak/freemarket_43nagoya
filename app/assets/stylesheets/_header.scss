@@ -26,9 +26,12 @@ h1.l-left {
   @include max-screen($xs) {
     margin-bottom: 8px;
   }
-  img {
-    width: 135px;
-    height: 40px;
+  a {
+    display: block;
+    img {
+      width: 135px;
+      height: 40px;
+    }
   }
 }
 
@@ -83,14 +86,34 @@ a {
 .main-header__nav-box {
   margin: 8px 0 0;
   @include max-screen($xs) {
-      margin: 0;
-    }
+    margin: 0;
+  }
   nav.left-box {
     float: left;
+    @include max-screen($xs) {
+      float: none;
+    }
     li.list-nav {
       padding-right: 16px;
       position: relative;
       display: inline-block;
+      @include max-screen($xs) {
+        display: inline-block;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        width: 48%;
+        &:first-child:after {
+          background: #eee;
+          content: '';
+          display: block;
+          height: 34px;
+          position: absolute;
+          top: 4px;
+          right: 0;
+          width: 1px;
+        }
+      }
       a.category {
         color: $gray;
         line-height: 40px;
@@ -129,6 +152,9 @@ a {
           line-height: 40px;
           color: $gray;
           display: block;
+          @include max-screen($xs) {
+            text-align: left;
+          }
         }
       }
       li.list:hover {
@@ -167,7 +193,7 @@ a {
           color: $lightBlue;
         }
         .right-box-avatar {
-          background: gray;
+          background: #eee;
           border-radius: 50%;
           display: inline-block;
           position: relative;
@@ -282,6 +308,38 @@ nav.right-box--xs {
         color: $lightBlue;
       }
     }
+    a.main-header__mypage {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      line-height: 40px;
+      &:hover {
+        color: $lightBlue;
+      }
+      .right-box-avatar {
+        background: #eee;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+        vertical-align: middle;
+        img {
+          border-radius: 50%;
+          max-width: 32px;
+          height: 32px;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      .right-box-mypage {
+        display: inline-block;
+        margin: 0 0 0 8px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
   }
 }
-

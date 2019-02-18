@@ -11,6 +11,10 @@
               = link_to "ログイン", user_session_path, class: "main-header__btn"
             %li
               = link_to "新規会員", new_user_registration_path, class: "main-header__signup"
+        - else
+          = link_to user_path(current_user.id), class: "main-header__mypage" do
+            .right-box-avatar
+              = image_tag ""
       %form.search-box
         %input.search-form{type: "search", name: "keyword", placeholder: "キーワードから探す"}
         / = form_for [] do |f|
