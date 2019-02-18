@@ -149,6 +149,22 @@
   &__buy {
     @include button_buy;
   }
+  &__sold {
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    background: #888;
+    color: $white;
+    line-height: 56px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: none;
+    @include max-screen($sm) {
+      font-size: 18px;
+      height: 56px;
+    }
+  }
   &__buy_sm {
     @include min-screen($sm) {
       display: none;
