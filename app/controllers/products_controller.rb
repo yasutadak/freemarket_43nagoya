@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.sort_new_id.limit(3)
+    @user = current_user
   end
 
   def list
