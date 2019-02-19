@@ -1,7 +1,5 @@
-%header
-  %h1
-  = link_to root_path do
-    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3708647559",class: "head-logo", alt: "mercari", width: 185, height: 49
+= render "logo/header"
+
 %main
   .head
     購入を確定しますか？
@@ -52,18 +50,8 @@
       .change
         変更する
         %i.fa.fa-angle-right.change__right
-%footer
-  %ul.nav
-    %li.nav__content
-      プライバシーポリシー
-    %li.nav__content
-      メルカリ利用規約
-    %li.nav__content
-      特定商取引に関する表記
-  .foot-logo
-    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3708647559", alt: "mercari", width: 80, height: 65
-  .copy-right
-    © 2019 Mercari
+
+= render "logo/footer"
 
 .overlay
   #modalwin.modalwin-hide
@@ -75,3 +63,4 @@
     .cancel__btn
       = link_to "ホーム", root_path, {class: "cancel__btn__back"}
     .delete__btn
+      = link_to "マイページ", user_path(current_user.id), {class: "cancel__btn__back"}
