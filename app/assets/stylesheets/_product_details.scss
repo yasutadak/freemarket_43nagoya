@@ -168,6 +168,9 @@
     font-weight: solid;
     font-size: 14px;
     text-decoration: none;
+    &:hover {
+      opacity: 0.9;
+    }
   }
   &__delete {
     height: 45px;
@@ -181,6 +184,9 @@
     font-weight: solid;
     font-size: 14px;
     text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+    }
   }
   &__description {
     padding: 32px 0 0;
@@ -210,6 +216,9 @@
         padding: 8px 16px;
         border-radius: 40px;
         text-decoration: none;
+        &:hover {
+          opacity: 0.7;
+        }
       }
       &-report {
         display: inline-block;
@@ -220,6 +229,9 @@
         padding: 8px 16px;
         border-radius: 40px;
         text-decoration: none;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
     &-right {
@@ -233,6 +245,9 @@
         display: inline-block;
         color: #0099e8;
         text-decoration: none;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -258,6 +273,10 @@
     a {
       color: #0099e8;
       text-decoration: none;
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
       i {
         margin-right: 4px;
       }
@@ -273,6 +292,10 @@
     a {
       color: #0099e8;
       text-decoration: none;
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
       i {
         margin-left: 4px;
       }
@@ -302,6 +325,9 @@
         display: block;
         color: #0099e8;
         text-decoration: none;
+        &:hover {
+          opacity: 0.7;
+        }
         i {
           width: 44px;
           height: 44px;
@@ -353,7 +379,7 @@
     padding: 0;
     h2 {
       margin: 24px 0 8px;
-      font-size: 22px;
+      font-size: 28px;
       line-height: 1.4;
       @include max-screen($sm) {
         margin: 24px 8% 8px;
@@ -373,6 +399,10 @@
         font-size: 20px;
         color: #0099e8;
         text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          opacity: 0.7;
+        }
       }
     }
     &-content {
