@@ -15,6 +15,10 @@ body {
   line-height: 1;
 }
 
+.wrap {
+  overflow: hidden;
+}
+
 $gray: #333;
 $lightGray: #ccc;
 $white: #fff;
@@ -88,6 +92,10 @@ $xs: 544px;
           display: block;
           color: #0099e8;
           text-decoration: none;
+          &:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+          }
         }
       }
     }
