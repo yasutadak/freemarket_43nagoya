@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.sort_new_id.limit(3)
-    # @user = current_user
+    @user = current_user
   end
 
   def list
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @products = @product.seller.selling_products.where.not(id: @product.id).sort_new_id.limit(6)
-    # @user = current_user
+    @user = current_user
   end
 
   def update
