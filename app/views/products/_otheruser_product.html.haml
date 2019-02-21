@@ -11,7 +11,11 @@
     %span.item-container__price-tax (税込)
     %span.item-container__price-fee
       = @product.shipping_burden == "送料込み（出品者負担）" ? "送料込み" : "着払い"
-  = link_to "購入画面に進む", "", { class: "item-container__buy_sm" }
+  - unless @product.buyer_id
+    = link_to "購入画面に進む",  purchase_path(@product.id), { class: "item-container__buy_sm" }
+  - else
+    .item-container__sold_sm
+      売り切れました
   .item-container__description
     %p= @product.description
   .item-container__button.clearfix
