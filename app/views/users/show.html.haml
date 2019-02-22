@@ -1,7 +1,10 @@
 = render "/shared/header"
 
-.myPage
-  = render "sideBar"
+- breadcrumb :users
+= render "./bread_crumb"
+
+.myPage.clearfix
   = render "main"
+  = render "/shared/sideBar"
 
 = render "/shared/footer"
